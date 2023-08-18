@@ -1,0 +1,105 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "/usr/bin/g++-12",
+            "args": [
+                "-std=gnu++2b",
+                "-O2",
+                "-DONLINE_JUDGE",
+                "-DATCODER",
+                "-Wall",
+                "-Wextra",
+                "-mtune=native",
+                "-march=native",
+                "-fconstexpr-depth=2147483647",
+                "-fconstexpr-loop-limit=2147483647",
+                "-fconstexpr-ops-limit=2147483647",
+                "-I${workspaceFolder}/ac-library",
+                "-I/opt/boost/gcc/include",
+                "-L/opt/boost/gcc/lib",
+                "-oa.out",
+                "${file}",
+                "-lgmpxx",
+                "-lgmp",
+                "-I/usr/include/eigen3",
+                "-ggdb3"
+            ],
+            "presentation": {
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "remove test",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "-rf",
+                "${workspaceFolder}/test"
+            ],
+            "presentation": {
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "download test",
+            "type": "shell",
+            "command": "oj",
+            "args": [
+                "d",
+                "${input:url}",
+                "-d",
+                "${workspaceFolder}/test",
+                "-s"
+            ],
+            "presentation": {
+                "panel": "shared",
+                "showReuseMessage": false
+            },
+            "dependsOn": ["remove test"],
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "oj",
+            "args": [
+                "t",
+                "-c",
+                "${workspaceFolder}/a.out",
+                "-d",
+                "${workspaceFolder}/test/"
+            ],
+            "presentation": {
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "submit",
+            "type": "shell",
+            "command": "oj",
+            "args": [
+                "s",
+                "${input:url}",
+                "${file}",
+                "-w",
+                "0",
+                "-y"
+            ],
+            "presentation": {
+                "panel": "shared"
+            },
+            "dependsOn": ["build","download test","test"],
+            "dependsOrder": "sequence"
+        }
+    ],
+    "inputs": [
+        {
+            "type":"promptString",
+            "id":"url",
+            "description": "URL of the task"
+        }
+    ]
+}
