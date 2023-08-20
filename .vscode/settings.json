@@ -88,7 +88,9 @@
     "valarray": "cpp",
     "variant": "cpp",
     "stacktrace": "cpp",
-    "dsu": "cpp"
+    "dsu": "cpp",
+    "expected": "cpp",
+    "spanstream": "cpp"
   },
   "editor.tabSize": 2,
   "editor.tabCompletion": "off",
