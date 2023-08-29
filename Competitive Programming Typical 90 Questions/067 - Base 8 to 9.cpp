@@ -4,13 +4,14 @@ string N;
 int K;
 int main(){
   cin>>N>>K;
-  while(K--){int i;
-    reverse(N.begin(),N.end());
-    int64_t n=0; for(i=0;i<N.size();i++)n+=(N[i]-'0')*pow(8,i);
-    string N9=""; i=1; while(n>0){
-      N9=(n%(int64_t)pow(9,i)+'0')+N9; n-=n%(int64_t)pow(9,i);
+  while(K--){
+    int64_t n=0,m=1; for(int i=(int)N.size()-1;i>=0;i--){
+      n+=(N[i]-'0')*m; m*=8;
     }
-    N=""; for(i=0;i<N.size();i++)N=N+(N9[i]=='8'?'5':N9[i]);
+    if(n==0)N="0";
+    else{N=""; m=9; while(n>0){N=char(n%m+'0')+N; n/=9;}
+    }
+    for(int i=0;i<(int)N.size();i++)if(N[i]=='8')N[i]='5';
   }
   cout<<N<<endl;
 }
