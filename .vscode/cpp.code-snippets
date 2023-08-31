@@ -1,0 +1,737 @@
+{
+	"header":{
+    "scope":"cpp",
+    "prefix":"header",
+    "body":[
+      "#include<bits/stdc++.h>",
+      "using namespace std;",
+			"$1",
+      "int main(){",
+      "\t$2",
+      "}"
+      ]
+  },
+	"ac-library":{
+    "scope":"cpp",
+    "prefix":"ac-library",
+    "body":[
+      "#include<atcoder/all>",
+      "using namespace atcoder;"
+    ]
+  },
+  "INF":{
+    "scope":"cpp",
+    "prefix":"INF",
+    "body":["#define INF ${1:1en}"]
+  },
+  "pi":{
+    "scope":"cpp",
+    "prefix":"pi",
+    "body":["M_PI"]
+  },
+  "string find":{
+    "scope":"cpp",
+    "prefix":"string find",
+    "body":["${1:string}.find(\"${2:string}\")"]
+  },
+  "string exist":{
+    "scope":"cpp",
+    "prefix":"string exist",
+    "body":["if(${1:string}.find(\"${2:string}\")!=string::npos)"]
+  },
+  "string substr":{
+    "scope":"cpp",
+    "prefix":"string substr",
+    "body":["${1:string}.substr(${2:pos}${3:,len})"]
+  },
+  "string erase":{
+    "scope":"cpp",
+    "prefix":"string erase",
+    "body":["${1:string}.erase(${2:pos}${3:,len})"]
+  },
+  "string insert":{
+    "scope":"cpp",
+    "prefix":"string insert",
+    "body":["${1:string}.insert(${2:pos},${3:\"string\"})"]
+  },
+  "string replace":{
+    "scope":"cpp",
+    "prefix":"string replace",
+    "body":["${1:string}.replace(${2:pos},${3:len},${4:\"string\"})"]
+  },
+  "string reverse":{
+    "scope":"cpp",
+    "prefix":"string reverse",
+    "body":["reverse(${1:string}.begin(),${1:string}.end());"]
+  },
+  "string sort":{
+    "scope":"cpp",
+    "prefix":"string sort",
+    "body":["sort(${1:string}.begin(),${1:string}.end());"]
+  },
+  "string descending sort":{
+    "scope":"cpp",
+    "prefix":"string descending sort",
+    "body":["sort(${1:string}.rbegin(),${1:string}.rend());"]
+  },
+  "to_string":{
+    "scope":"cpp",
+    "prefix":"to_string",
+    "body":["to_string(${1:number})"]
+  },
+  "string to int":{
+    "scope":"cpp",
+    "prefix":"string to int",
+    "body":["stoi(${1:string})"]
+  },
+  "string to double":{
+    "scope":"cpp",
+    "prefix":"string to double",
+    "body":["stod(${1:string})"]
+  },
+  "string to lower":{
+    "scope":"cpp",
+    "prefix":"string to lower",
+    "body":["transform(${1:string}.begin(), ${1:string}.end(), ${1:string}.begin(),tolower);"]
+  },
+  "string to upper":{
+    "scope":"cpp",
+    "prefix":"string to upper",
+    "body":["transform(${1:string}.begin(), ${1:string}.end(), ${1:string}.begin(),toupper);"]
+  },
+  "next iterator for set/map":{
+    "scope":"cpp",
+    "prefix":"next iterator for set/map",
+    "body":["next(${1:set/map}.begin(),${2:n})"]
+  },
+  "prev iterator for set/map":{
+    "scope":"cpp",
+    "prefix":"prev iterator for set/map",
+    "body":["prev(${1:set/map}.end(),${2:n})"]
+  },
+  "mod1998244353":{
+    "scope":"cpp",
+    "prefix":"mod1000000007",
+    "body":["using mint=modint1000000007;"]
+  },
+  "mod998244353":{
+    "scope":"cpp",
+    "prefix":"mod998244353",
+    "body":["using mint=modint998244353;"]
+  },
+  "modint":{
+    "scope":"cpp",
+    "prefix":"modint",
+    "body":[
+      "using mint=modint;",
+      "mint::set_mod(${1:mod});"
+    ]
+  },
+  "modint val":{
+    "scope":"cpp",
+    "prefix":"modint val",
+    "body":["${1:x}.val()"]
+  },
+  "modint pow":{
+    "scope":"cpp",
+    "prefix":"modint pow",
+    "body":["${1:x}.pow(${2:n})"]
+  },
+  "modint inv":{
+    "scope":"cpp",
+    "prefix":"modint inv",
+    "body":["${1:x}.inv()"]
+  },
+  "typedef pair":{
+    "scope":"cpp",
+    "prefix":"typedef pair",
+    "body":["typedef pair<${1:type},${2:type}>${3:P};"]
+  },
+  "tie pair":{
+    "scope":"cpp",
+    "prefix":"tie pair",
+    "body":["tie(${1:a},${2:b})=${3:pair}"]
+  },
+  "tuple get":{
+    "scope":"cpp",
+    "prefix":"tuple get",
+    "body":["get<${1:0}>(${2:tuple})"]
+  },
+  "array size":{
+    "scope":"cpp",
+    "prefix":"array size",
+    "body":["${1:array}.size()"]
+  },
+  "array count":{
+    "scope":"cpp",
+    "prefix":"array count",
+    "body":["count(${1:array},${1:array}+${2:N},${3:value})"]
+  },
+  "array find":{
+    "scope":"cpp",
+    "prefix":"array find",
+    "body":["auto ${1:iterator}=find(${2:array},${2:array}+${3:N},${4:value});"]
+  },
+  "array fill":{
+    "scope":"cpp",
+    "prefix":"array fill",
+    "body":["fill(${1:array},${1:array}+${2:N},${3:value});"]
+  },
+  "array fill 2d":{
+    "scope":"cpp",
+    "prefix":"array fill 2d",
+    "body":["fill(${1:array}[0],${1:array}[${2:H}],${3:value});"]
+  },
+  "array fill 3d":{
+    "scope":"cpp",
+    "prefix":"array fill 3d",
+    "body":["fill(${1:array}[0][0],${1:array}[${2:N}][0],${3:value});"]
+  },
+  "array sort":{
+    "scope":"cpp",
+    "prefix":"array sort",
+    "body":["sort(${1:array},${1:array}+${2:N});"]
+  },
+  "array descending sort":{
+    "scope":"cpp",
+    "prefix":"array descending sort",
+    "body":["sort(${1:array},${1:array}+${2:N},greater<${3:type}>());"]
+  },
+  "array pair second sort":{
+    "scope":"cpp",
+    "prefix":"array pair second sort",
+    "body":["sort(${1:array},${1:array}+${2:N},[](auto x, auto y){return x.second<y.second;});"]
+  },
+  "array lower_bound":{
+    "scope":"cpp",
+    "prefix":"array lower_bound",
+    "body":["auto ${1:iterator not less than value}=lower_bound(${2:sorted array},${2:sorted array}+${3:N},${4:value});"]
+  },
+  "array upper_bound":{
+    "scope":"cpp",
+    "prefix":"array upper_bound",
+    "body":["auto ${1:iterator greater than value}=upper_bound(${2:sorted array},${2:sorted array}+${3:N},${4:value});"]
+  },
+  "array max":{
+    "scope":"cpp",
+    "prefix":"array max",
+    "body":["*max_element(${1:array},${1:array}+${2:N})"]
+  },
+  "array min":{
+    "scope":"cpp",
+    "prefix":"array min",
+    "body":["*min_element(${1:array},${1:array}+${2:N})"]
+  },
+  "array accumulate":{
+    "scope":"cpp",
+    "prefix":"array accumulate",
+    "body":["accumulate(${1:array},${1:array}+${2:N},0)"]
+  },
+  "vector insert":{
+    "scope":"cpp",
+    "prefix":"vector insert",
+    "body":["${1:vector}.insert(${1:vector}.begin()+${2:n},${3:value});"]
+  },
+  "vector erase":{
+    "scope":"cpp",
+    "prefix":"vector erase",
+    "body":["${1:vector}.erase(${1:vector}.begin()+${2:n});"]
+  },
+  "vector erase value":{
+    "scope":"cpp",
+    "prefix":"vector erase vpalue",
+    "body":["erase(${1:vector},${2:value});"]
+  },
+  "vector size":{
+    "scope":"cpp",
+    "prefix":"vector size",
+    "body":["${1:vector}.size()"]
+  },
+  "vector resize":{
+    "scope":"cpp",
+    "prefix":"vector resize",
+    "body":["${1:vector}.resize(${2:n})"]
+  },
+  "vector count":{
+    "scope":"cpp",
+    "prefix":"vector count",
+    "body":["count(${1:vector}.begin(),${1:vector}.end(),${2:value})"]
+  },
+  "vector find":{
+    "scope":"cpp",
+    "prefix":"vector find",
+    "body":["auto ${1:iterator}=find(${2:vector}.begin(),${2:vector}.end(),${3:value});"]
+  },
+  "vector fill":{
+    "scope":"cpp",
+    "prefix":"vector fill",
+    "body":["fill(${1:vector}.begin(),${1:vector}.end(),${2:value});"]
+  },
+  "vector sort":{
+    "scope":"cpp",
+    "prefix":"vector sort",
+    "body":["sort(${1:vector}.begin(),${1:vector}.end());"]
+  },
+  "vector descending sort":{
+    "scope":"cpp",
+    "prefix":"vector descending sort",
+    "body":["sort(${1:vector}.rbegin(),${1:vector}.rend());"]
+  },
+  "vector lower_bound":{
+    "scope":"cpp",
+    "prefix":"vector lower_bound",
+    "body":["auto ${1:iterator not less than value}=lower_bound(${2:sorted vector}.begin(),${2:sorted vector}.end(),${3:value});"]
+  },
+  "vector upper_bound":{
+    "scope":"cpp",
+    "prefix":"vector upper_bound",
+    "body":["auto ${1:iterator greater than value}=upper_bound(${2:sorted vector}.begin(),${2:sorted vector}.end(),${3:value});"]
+  },
+  "vector max":{
+    "scope":"cpp",
+    "prefix":"vector max",
+    "body":["*max_element(${1:vector}.begin(),${1:vector}.end())"]
+  },
+  "vector min":{
+    "scope":"cpp",
+    "prefix":"vector min",
+    "body":["*min_element(${1:vector}.begin(),${1:vector}.end())"]
+  },
+  "vector accumulate":{
+    "scope":"cpp",
+    "prefix":"vector accumulate",
+    "body":["accumulate(${1:vector},${1:vector}+${2:N},0)"]
+  },
+  "set":{
+    "scope":"cpp",
+    "prefix":"set",
+    "body":["set<${1:type}>$2${3:'{}'}"]
+  },
+  "set insert":{
+    "scope":"cpp",
+    "prefix":"set insert",
+    "body":["${1:set}.insert(${2:value});"]
+  },
+  "set erase":{
+    "scope":"cpp",
+    "prefix":"set erase",
+    "body":["${1:set}.erase(${2:value/iterator});"]
+  },
+  "set find":{
+    "scope":"cpp",
+    "prefix":"set find",
+    "body":["auto ${1:iterator}=${2:set}.find(${3:value});"]
+  },
+  "set lower_bound":{
+    "scope":"cpp",
+    "prefix":"set lower_bound",
+    "body":["auto ${1:iterator not less than value}=${2:set}.lower_bound(${3:value});"]
+  },
+  "set upper_bound":{
+    "scope":"cpp",
+    "prefix":"set upper_bound",
+    "body":["auto ${1:iterator greater than value}=${2:set}.upper_bound(${3:value});"]
+  },
+  "set accumulate":{
+    "scope":"cpp",
+    "prefix":"set accumulate",
+    "body":["accumulate(${1:set}.begin(),${1:set}.end(),0)"]
+  },
+  "descending order set":{
+    "scope":"cpp",
+    "prefix":"descending order set",
+    "body":["set<${1:type},greater<${1:type}>>$2"]
+  },
+  "multiset":{
+    "scope":"cpp",
+    "prefix":"multiset",
+    "body":["multiset<${1:type}>$2"]
+  },
+  "map":{
+    "scope":"cpp",
+    "prefix":"map",
+    "body":["map<${1:type},${2:type}>$3"]
+  },
+  "map first":{
+    "scope":"cpp",
+    "prefix":"map first",
+    "body":["${1:map}.first"]
+  },
+  "map second":{
+    "scope":"cpp",
+    "prefix":"map second",
+    "body":["${1:imap}.second"]
+  },
+  "map erase":{
+    "scope":"cpp",
+    "prefix":"map erase",
+    "body":["${1:map}.erase(${2:key/iterator});"]
+  },
+  "map count":{
+    "scope":"cpp",
+    "prefix":"map count",
+    "body":["${1:map}.count(${2:key})"]
+  },
+  "map find":{
+    "scope":"cpp",
+    "prefix":"map find",
+    "body":["auto ${1:iterator}=${2:map}.find(${3:key});"]
+  },
+  "map lower_bound":{
+    "scope":"cpp",
+    "prefix":"map lower_bound",
+    "body":["auto ${1:iterator not less than value}=${2:map}.lower_bound(${3:value});"]
+  },
+  "map upper_bound":{
+    "scope":"cpp",
+    "prefix":"map upper_bound",
+    "body":["auto ${1:iterator greater than value}=${2:map}.upper_bound(${3:value});"]
+  },
+  "descending order map":{
+    "scope":"cpp",
+    "prefix":"descending order map",
+    "body":["map<${1:type},${2:type},greater<${1:type}>>$3"]
+  },
+  "multimap":{
+    "scope":"cpp",
+    "prefix":"multimap",
+    "body":["multimap<${1:type},${2:type}>$3"]
+  },
+  "multimap insert":{
+    "scope":"cpp",
+    "prefix":"multimap insert",
+    "body":["${1:multimap}.insert(${2:key},${3:value});"]
+  },
+  "multimap first":{
+    "scope":"cpp",
+    "prefix":"multimap first",
+    "body":["${1:multimap}.first"]
+  },
+  "multimap second":{
+    "scope":"cpp",
+    "prefix":"multimap second",
+    "body":["${1:multimap}.second"]
+  },
+  "queue":{
+    "scope":"cpp",
+    "prefix":"queue",
+    "body":["queue<${1:type}>$2"]
+  },
+  "priority_queue":{
+    "scope":"cpp",
+    "prefix":"priority_queue",
+    "body":["priority_queue<${1:type}>$2"]
+  },
+  "ascending order priority_queue":{
+    "scope":"cpp",
+    "prefix":"ascending order priority_queue",
+    "body":["priority_queue<${1:type},vector<${1:type}>,greater<${1:type}>>$2"]
+  },
+  "set_intersection":{
+    "scope":"cpp",
+    "prefix":"set_intersection",
+    "body":["set_intersection(${1:sorted STL container}.begin(),${1:sorted STL container}.end(),${2:sorted STL container}.begin(),${2:sorted STL container}.end(),back_inserter(${3:STL container}));"]
+  },
+  "set_union":{
+    "scope":"cpp",
+    "prefix":"set_union",
+    "body":["set_union(${1:sorted STL container}.begin(),${1:sorted STL container}.end(),${2:sorted STL container}.begin(),${2:sorted STL container}.end(),back_inserter(${3:STL container}));"]
+  },
+  "set_difference":{
+    "scope":"cpp",
+    "prefix":"set_difference",
+    "body":["set_difference(${1:sorted STL container}.begin(),${1:sorted STL container}.end(),${2:sorted STL container}.begin(),${2:sorted STL container}.end(),back_inserter(${3:STL container}));"]
+  },
+  "max":{
+    "scope":"cpp",
+    "prefix":"max",
+    "body":["max({$1,$2,$3})"]
+  },
+  "min":{
+    "scope":"cpp",
+    "prefix":"min",
+    "body":["min({$1,$2,$3})"]
+  },
+  "pow":{
+    "scope":"cpp",
+    "prefix":"pow",
+    "body":["pow($1,$2)"]
+  },
+  "round":{
+    "scope":"cpp",
+    "prefix":"round",
+    "body":["round($1)"]
+  },
+  "ceil":{
+    "scope":"cpp",
+    "prefix":"ceil",
+    "body":["ceil($1)"]
+  },
+  "round down":{
+    "scope":"cpp",
+    "prefix":"round down in division",
+    "body":["(${1:dividend}+${2:divisor}-1)/${2:divisor}"]
+  },
+  "floor":{
+    "scope":"cpp",
+    "prefix":"floor",
+    "body":["floor($1)"]
+  },
+  "sin":{
+    "scope":"cpp",
+    "prefix":"sin",
+    "body":["sin(${1:radian})"]
+  },
+  "cos":{
+    "scope":"cpp",
+    "prefix":"cos",
+    "body":["cos(${1:radian})"]
+  },
+  "tan":{
+    "scope":"cpp",
+    "prefix":"tan",
+    "body":["tan(${1:radian})"]
+  },
+  "arcsin":{
+    "scope":"cpp",
+    "prefix":"arcsin",
+    "body":["asin($1)"]
+  },
+  "arccos":{
+    "scope":"cpp",
+    "prefix":"arccos",
+    "body":["acos($1)"]
+  },
+  "arctan":{
+    "scope":"cpp",
+    "prefix":"arctan",
+    "body":["atan($1)"]
+  },
+  "Greatest Common Divisor":{
+    "scope":"cpp",
+    "prefix":"Greatest Common Divisor",
+    "body":["gcd($1,$2)"]
+  },
+  "Least Common Multiple":{
+    "scope":"cpp",
+    "prefix":"Least Common Multiple",
+    "body":["lcm($1,$2)"]
+  },
+  "for":{
+    "scope":"cpp",
+    "prefix":"for",
+    "body":["for(int ${1:i}=${2:0};${1:i}<$3${4:N};${1:i}++)"]
+  },
+  "for_each":{
+    "scope":"cpp",
+    "prefix":"for_each",
+    "body":["for_each(${1:STL container}.begin(),${1:STL container}.end(),[](${2:type} x){cout<<x<<' ';}); cout<<endl;"]
+  },
+  "all_of":{
+    "scope":"cpp",
+    "prefix":"all_of",
+    "body":["all_of(${1:STL container}.begin(),${1:STL container}.end(),[](${2:type} x){return ${3:f(x)};})"]
+  },
+  "any_of":{
+    "scope":"cpp",
+    "prefix":"any_of",
+    "body":["any_of(${1:STL container}.begin(),${1:STL container}.end(),[](${2:type} x){return ${3:f(x)};})"]
+  },
+  "none_of":{
+    "scope":"cpp",
+    "prefix":"none_of",
+    "body":["none_of(${1:STL container}.begin(),${1:STL container}.end(),[](${2:type} x){return ${3:f(x)};})"]
+  },
+  "cin":{
+    "scope":"cpp",
+    "prefix":"cin",
+    "body":["cin>>$1;"]
+  },
+  "cout":{
+    "scope":"cpp",
+    "prefix":"cout",
+    "body":["cout<<$1<<endl;"]
+  },
+  "Yes or No":{
+    "scope":"cpp",
+    "prefix":"yes or no",
+    "body":["cout<<(${1:bool}?\"Yes\":\"No\")<<endl;"]
+  },
+  "enumeration":{
+    "scope":"cpp",
+    "prefix":"enumeration",
+    "body":["for(int i=0;i<N;i++)cout<<${1:answer}[i]<<\" \\n\"[i==N-1];"]
+  },
+  "setprecision":{
+    "scope":"cpp",
+    "prefix":"fixed_setprecision",
+    "body":["fixed<<setprecision($1)<<"]
+  },
+  "recursion":{
+    "scope":"cpp",
+    "prefix":"recursion",
+    "body":[
+      "${1:type} f(${2:type} i){",
+      "\tif(i==0)return value;",
+      "\telse return function(f(i-1));",
+      "}"
+    ]
+  },
+  "exit":{
+    "scope":"cpp",
+    "prefix":"exit",
+    "body":["exit(0);"]
+  },
+  "Knapsack DP":{
+    "scope":"cpp",
+    "prefix":"Knapsack DP",
+    "body":[
+      "for(int i=0;i<N;i++)for(int j=W;j>=w[i];j--)",
+      "\tdp[j]=max(dp[j],dp[j-w[i]]+v[i]",
+      "}",
+      "cout<<dp[W]<<endl;"
+    ]
+  },  
+  "Unbounded Knapsack DP":{
+    "scope":"cpp",
+    "prefix":"Unbounded Knapsack DP",
+    "body":[
+      "for(int i=0;i<N;i++)for(int j=w[i];j<=W;j++)",
+      "\tdp[j]=max(dp[j],dp[j-w[i]]+v[i]",
+      "}",
+      "cout<<dp[W]<<endl;"
+    ]
+  },  
+  "undirected graph":{
+    "scope":"cpp",
+    "prefix":"undirected graph",
+    "body":[
+      "int u,v; for(int i=0;i<M;i++){cin>>u>>v;",
+      "\tG[u].push_back(v),G[v].push_back(u);",
+      "}"
+    ]
+  },
+  "Depth-First Serch":{
+    "scope":"cpp",
+    "prefix":"Depth-First Serch",
+    "body":[
+      "void dfs(int i){",
+      "\td[i]=1;",
+      "\tfor(int j:G[i])if(!d[j]){",
+      "\t\tv[j]=v[i]+1; dfs(j);",
+      "\t}",
+      "}"
+    ]
+  },
+  "Breadth-First Serch":{
+    "scope":"cpp",
+    "prefix":"Breadth-First Serch",
+    "body":[
+      "queue<int>q; q.push(1); while(q.size()){",
+      "\tint i=q.front(); q.pop();",
+      "\tfor(int j:G[i])if(!d[j]){",
+      "\t\tv[j]=v[i]+1; q.push(j);",
+      "\t}",
+      "}"
+    ]
+  },
+  "Floyd-Warshall":{
+    "scope":"cpp",
+    "prefix":"Floyd-Warshall",
+    "body":[
+      "fill(${1:d}[0],${1:d}[${2:N}],INF);",
+      "int u,v,di; for(int i=0;i<${3:M};i++)cin>>u>>v>>di,${1:d}d[u][v]=di;",
+      "for(int k=1;k<=${2:N};k++)",
+      "\tfor(int i=1;i<=${2:N};i++)",
+      "\t\tfor(int j=1;j<=${2:N};j++)",
+      "\t\t\t${1:d}[i][j]=min(${1:d}[i][j],${1:d}[i][k]+${1:d}[k][j]);"
+    ]
+  },
+  "Topological Sort":{
+    "scope":"cpp",
+    "prefix":"Topological Sort",
+    "body":[
+      "int u,v; for(int i=0;i<M;i++){cin>>u>>v;",
+      "\tG[u].push_back(v); ind[v]++;",
+      "}",
+      "for(int i=1;i<=N;i++)if(!ind[i])q.push(i);",
+      "while(q.size()){",
+      "\tint j=q.front(); q.pop(); a.push_back(j);",
+      "\tfor(int k:G[j])if(!--ind[k])q.push(k);",
+      "}"
+    ]
+  },
+  "Union-Find constructor":{
+    "scope":"cpp",
+    "prefix":"Union-Find constructor",
+    "body":["dsu ${1:d}(${2:N});"]
+  },
+  "Union-Find marge":{
+    "scope":"cpp",
+    "prefix":"Union-Find marge",
+    "body":["${1:d}.merge(${2:u},${3:v});"]
+  },
+  "Union-Find same":{
+    "scope":"cpp",
+    "prefix":"Union-Find same",
+    "body":["${1:d}.same(${2:u},${3:v})"]
+  },
+  "Union-Find leader":{
+    "scope":"cpp",
+    "prefix":"Union-Find leader",
+    "body":["${1:d}.leader(${2:i})"]
+  },
+  "Union-Find size":{
+    "scope":"cpp",
+    "prefix":"Union-Find size",
+    "body":["${1:d}.size(${2:i})"]
+  },
+  "grid move":{
+    "scope":"cpp",
+    "prefix":"grid move",
+    "body":[
+      "int di[]={-1,0,1,0},dj[]={0,1,0,-1};",
+      "for(int k=0;k<4;k++){",
+      "\tint ni=i+di[k],nj=j+dj[k];",
+      "\tif(!f[ni][nj])f[ni][nj]=f[i][j]+1;",
+      "}"
+    ]
+  },
+  "Eratosthenes prime":{
+    "scope":"cpp",
+    "prefix":"Eratosthenes prime",
+    "body":[
+      "vector<int64_t>e; vector<bool>p(${1:N}+1);",
+      "for(int i=2;i<=${1:N};i++){if(p[i])continue;",
+      "\te.push_back(i); for(int j=i;j<=${1:N};j+=i)p[j]=1;",
+      "}"
+    ]
+  },
+  "integer factorization":{
+    "scope":"cpp",
+    "prefix":"integer factorization",
+    "body":[
+      "map<int,int>f;",
+      "for(int64_t i=2;i*i<=n;i++)if(n%i==0)",
+      "\twhile(d%i==0)f[i]++,n/=i;",
+      "if(n>1)f[n]++;"
+    ]
+  },
+  "binary string to int":{
+    "scope":"cpp",
+    "prefix":"binary string to int",
+    "body":[
+      "int64_t a=0;b=1; for(int i=s.size()-1;i>=0;i--){",
+      "\tif(s[i]==\"1\")a+=b; a*=2;",
+      "}"
+    ]
+  },
+  "next_permutation":{
+    "scope":"cpp",
+    "prefix":"next_permutation",
+    "body":[
+      "do{$1",
+      "}while(next_permutation(${2:sorted vector}.begin(),${2:sorted vector}.end()));"
+    ]
+  },
+}

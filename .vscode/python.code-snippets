@@ -1,0 +1,50 @@
+{
+	//	"Print to console": {
+	//		"prefix": "log",
+	//		"body": [
+	//		"console.log('$1');",
+	//		"$2"
+	//	 	],
+	//	 	"description": "Log output to console"
+	//	},
+	//	x=int(input())
+	//
+	//
+	//	x,y=[int(_) for _ in input().split()]
+	//	x=[int(_) for _ in input().split()]
+	//	x=list(map(int,input().split()))
+	//	
+	//	x=[int(input()) for _ in range(n)]
+	//	
+	//	x=[list(map(int,input().split())) for _ in range(n)]
+	//	
+	//	
+	//	x,y=input().split()
+	//	x=input().split()
+	//	
+	//	x=[input() for _ in range(n)]
+	//	
+	//	x=[input().split() for _ in range(n)]
+	
+	
+	//	list.index(a)
+	
+	
+	//	for i in reversed(range(start,stop,step)):
+	//
+	//	for i,x in enumerate(sequence):
+	//	
+	//	for i in range(n):
+	//			for j in range(m):
+	//					if bool:
+	//							break
+	//			else:
+	//					continue
+	//			break
+	//	else:
+	
+	
+	//	print(" ".join(list))
+	
+	
+	}
