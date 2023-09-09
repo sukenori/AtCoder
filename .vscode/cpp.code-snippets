@@ -615,12 +615,14 @@
     "scope":"cpp",
     "prefix":"Depth-First Serch",
     "body":[
-      "void dfs(int i){",
+      "auto dfs[&](auto f,int i)->void {",
       "\td[i]=1;",
       "\tfor(int j:G[i])if(!d[j]){",
-      "\t\tv[j]=v[i]+1; dfs(j);",
+      "\t\tv[j]=v[i]+1; dfs(f,j);",
       "\t}",
-      "}"
+      "\td[i]=0;",
+      "};",
+      "dfs(dfs,1)"
     ]
   },
   "Breadth-First Serch":{
