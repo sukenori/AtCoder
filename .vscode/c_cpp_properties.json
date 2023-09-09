@@ -2,7 +2,7 @@
     "configurations": [
         {
             "name": "WSL",
-            "intelliSenseMode": "gcc-x64",
+            "intelliSenseMode": "linux-gcc-x86",
             "compilerPath": "/usr/bin/g++-12",
             "includePath": [
                 "/usr/include/**",

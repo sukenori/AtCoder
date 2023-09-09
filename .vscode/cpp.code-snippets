@@ -260,7 +260,7 @@
   "vector find":{
     "scope":"cpp",
     "prefix":"vector find",
-    "body":["auto ${1:iterator}=find(${2:vector}.begin(),${2:vector}.end(),${3:value});"]
+    "body":["auto ${1:iterator}=ranges::find(${2:vector},${3:value});"]
   },
   "vector fill":{
     "scope":"cpp",
@@ -732,8 +732,8 @@
     "scope":"cpp",
     "prefix":"next_permutation",
     "body":[
-      "do{$1",
-      "}while(next_permutation(${2:sorted vector}.begin(),${2:sorted vector}.end()));"
+      "do{",
+      "}while(next_permutation(${1:sorted vector}).found);"
     ]
   },
 }
