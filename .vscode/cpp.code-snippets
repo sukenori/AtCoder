@@ -733,7 +733,7 @@
     "prefix":"next_permutation",
     "body":[
       "do{",
-      "}while(next_permutation(${1:sorted vector}).found);"
+      "}while(ranges::next_permutation(${1:sorted vector}).found);"
     ]
   },
 }
