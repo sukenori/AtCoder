@@ -2,7 +2,37 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "build nim",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "type": "shell",
+            "command": "${userHome}/.nimble/bin/nim",
+            "args": [
+                //"cpp",
+                "c",
+                //"-d:release",
+                //"--opt:speed",
+                "--multimethods:on",
+                "--warning[SmallLshouldNotBeUsed]:off",
+                "--hints:off",
+                "-o:a.out",
+                //"--debuginfo",
+                "--debugger:native",
+                //"--lineDir:on",
+                "${file}"
+            ],
+            "presentation": {
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "build cpp",
+            "group": {
+                "kind": "build",
+                //"isDefault":true
+            },
             "type": "shell",
             "command": "/usr/bin/g++-12",
             "args": [
@@ -77,7 +107,22 @@
             }
         },
         {
-            "label": "submit",
+            "label": "python test",
+            "type": "shell",
+            "command": "oj",
+            "args": [
+                "t",
+                "-c",
+                "python3.11 \"${file}\"",
+                "-d",
+                "${workspaceFolder}/test/"
+            ],
+            "presentation": {
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "nim submit",
             "type": "shell",
             "command": "oj",
             "args": [
@@ -91,7 +136,49 @@
             "presentation": {
                 "panel": "shared"
             },
-            "dependsOn": ["build","download test","test"],
+            "dependsOn": ["build nim","download test","test"],
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "cpp submit",
+            "type": "shell",
+            "command": "oj",
+            "args": [
+                "s",
+                "${input:url}",
+                "${file}",
+                "-w",
+                "0",
+                "-y"
+            ],
+            "presentation": {
+                "panel": "shared"
+            },
+            "dependsOn": ["build cpp","download test","test"],
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "python submit",
+            "type": "shell",
+            "command": "oj",
+            "args": [
+                "s",
+                "${input:url}",
+                "${file}",
+                "-l",
+                "python",
+                "--guess-python-version",
+                "3",
+                "--guess-python-interpreter",
+                "pypy",
+                "-w",
+                "0",
+                "-y"
+            ],
+            "presentation": {
+                "panel": "shared"
+            },
+            "dependsOn": ["download test","python test"],
             "dependsOrder": "sequence"
         }
     ],

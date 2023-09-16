@@ -2,10 +2,35 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "nim-gdb Launch",
             "type": "cppdbg",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "build nim",
+            //"program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/a.out",
+            "args": [
+                "<",
+                "${workspaceFolder}/test/sample-1.in"
+            ],
+            "stopAtEntry": false,
+            //"cwd": "${fileDirname}",            
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "nim-gdb",            
+            "setupCommands": [{
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }]
+        },
+        {
+            "name": "gdb Launch",
+            //"type": "node",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "build cpp",
             "program": "${workspaceFolder}/a.out",
             "args": ["<", "${workspaceFolder}/test/sample-1.in"],
             "stopAtEntry": true,
@@ -20,7 +45,7 @@
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ],
+            ]
         }
     ]
 }

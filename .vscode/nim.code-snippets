@@ -1,0 +1,56 @@
+{
+	"proc foo":{
+		"scope":"nim",
+		"prefix":"proc foo",
+		"body": [
+			"proc foo*()=",
+			"foo()"
+		]
+	},
+	"readLine int":{
+		"scope":"nim",
+		"prefix":"readLine int",
+		"body": [
+      "import strutils,sequtils",
+      "val",
+      "\tr=stdin.readLine.split.map parseInt"
+    ]
+	},
+	"readLine string":{
+		"scope":"nim",
+		"prefix":"readLine string",
+		"body": [
+      "import strutils",
+      "val",
+      "\tr=stdin.readLine.split"
+    ]
+	},
+	"readAll int":{
+		"scope":"nim",
+		"prefix":"readAll int",
+		"body": [
+      "import strutils,sequtils",
+      "val",
+      "\tr=stdin.readAll.split.map parseInt"
+    ]
+	},
+	"readAll string":{
+		"scope":"nim",
+		"prefix":"readAll string",
+		"body": [
+      "import strutils",
+      "val",
+      "\tr=stdin.readAll.split"
+    ]
+	},
+	"parseInt":{
+		"scope":"nim",
+		"prefix":"parseInt",
+		"body": [".parseInt"]
+	},
+	"parseFloat":{
+		"scope":"nim",
+		"prefix":"parseFloat",
+		"body": [".parseFloat"]
+	},
+}

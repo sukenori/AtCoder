@@ -1,26 +1,53 @@
 {
-	//	"Print to console": {
-	//		"prefix": "log",
-	//		"body": [
-	//		"console.log('$1');",
-	//		"$2"
-	//	 	],
-	//	 	"description": "Log output to console"
-	//	},
-	//	x=int(input())
+	"input int":{
+		"scope":"python",
+		"prefix":"input int",
+		"body": [${1:int}=int(input())]
+	},
+	"input multiple int":{
+		"scope":"python",
+		"prefix":"input multiple int",
+		"body": [${1:int},${2:int}=map(int,input().split())]
+	},
+	"input int list":{
+		"scope":"python",
+		"prefix":"input int list",
+		"body": [${1:list}=list(map(int,input().split()))]
+	},
+	"input 0-indexed int list":{
+		"scope":"python",
+		"prefix":"input 0-indexed int list",
+		"body": [${1:list}=[int(_)-1 for(_) in input().split()]]
+	},
+
+	
+	"input string":{
+		"scope":"python",
+		"prefix":"input string",
+		"body": [${1:string}=input()]
+	},
+	"input multiple string":{
+		"scope":"python",
+		"prefix":"input multiple stirng",
+		"body": [${1:string},${2:string}=input().split()]
+	},
+	"input string list":{
+		"scope":"python",
+		"prefix":"input string list",
+		"body": [${1:list}=input().split()]
+	},
+
 	//
 	//
-	//	x,y=[int(_) for _ in input().split()]
-	//	x=[int(_) for _ in input().split()]
-	//	x=list(map(int,input().split()))
+
+
 	//	
 	//	x=[int(input()) for _ in range(n)]
 	//	
 	//	x=[list(map(int,input().split())) for _ in range(n)]
 	//	
 	//	
-	//	x,y=input().split()
-	//	x=input().split()
+
 	//	
 	//	x=[input() for _ in range(n)]
 	//	
@@ -47,4 +74,4 @@
 	//	print(" ".join(list))
 	
 	
-	}
+}
