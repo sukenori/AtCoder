@@ -4,53 +4,238 @@
 		"prefix":"proc foo",
 		"body": [
 			"proc foo*()=",
+			"",
 			"foo()"
 		]
 	},
-	"readLine int":{
+	"header":{
 		"scope":"nim",
-		"prefix":"readLine int",
+		"prefix":"header",
 		"body": [
-      "import strutils,sequtils",
-      "val",
-      "\tr=stdin.readLine.split.map parseInt"
+			"include atcoder/header",
+			"let"
+			"\t${1:var}=next${2|Int,String,Float|}()"
+		]
+	},
+	"nextInt/String/Float":{
+		"scope":"nim",
+		"prefix":"nextInt/String/Float",
+		"body": ["next${1|Int,String,Float|}()"]
+	},
+	"multiple nextInt/String/Float":{
+		"scope":"nim",
+		"prefix":"multiple nextInt/String/Float",
+		"body": ["newSeqWith(${1:N},next${2|Int,String,Float|}())"]
+	},
+	"var":{
+		"scope":"nim",
+		"prefix":"var",
+		"body": ["var"]
+	},
+	"let":{
+		"scope":"nim",
+		"prefix":"let",
+		"body": ["let"]
+	},
+	"inf":{
+		"scope":"nim",
+		"prefix":"inf",
+		"body": ["inf"]
+	},
+	"readLine":{
+		"scope":"nim",
+		"prefix":"readLine",
+		"body": ["stdin.readLine"]
+	},
+	"multiple readLine":{
+		"scope":"nim",
+		"prefix":"multiple readLine",
+		"body": ["newSeqWith(${2:N},stdin.readLine)"]
+	},
+	"split":{
+		"scope":"nim",
+		"prefix":"split",
+		"body": ["split"]
+	},
+	"parseInt/Float":{
+		"scope":"nim",
+		"prefix":"parseInt/Float",
+		"body": ["parse${1|Int,Floaat|}"]
+	},
+	"chartoint":{
+		"scope":"nim",
+		"prefix":"chartoint",
+		"body": ["${1:n}[0]"]
+	},
+	"inttochar":{
+		"scope":"nim",
+		"prefix":"inttochar",
+		"body": ["${1:char}.parseInt"]
+	},
+	"repeat":{
+		"scope":"nim",
+		"prefix":"repeat",
+		"body": ["repeat($0)"]
+	},
+	"replace":{
+		"scope":"nim",
+		"prefix":"replace",
+		"body": ["replace(\"${1:str}\",\"${2:str}\")"]
+	},
+	"pattern match":{
+		"scope":"nim",
+		"prefix":"pattern match",
+		"body": ["match(re\"${1:pattern}\")"]
+	},
+	"sorted":{
+		"scope":"nim",
+		"prefix":"sorted",
+		"body": ["sorted${1:(Descending)}"]
+	},
+	"reversed":{
+		"scope":"nim",
+		"prefix":"reversed",
+		"body": ["reversed"]
+	},
+	"count":{
+		"scope":"nim",
+		"prefix":"count",
+		"body": ["coount($0)"]
+	},
+	"newSeq":{
+		"scope":"nim",
+		"prefix":"newSeq",
+		"body": ["newSeq[${1:T}](${2:len})"]
+	},
+	"newSeqWith":{
+		"scope":"nim",
+		"prefix":"newSeqWith",
+		"body": ["newSeqWith(${1:n},${2:val})"]
+	},
+	"toSeq/HashSet/OrderdSet":{
+		"scope":"nim",
+		"prefix":"toSeq",
+		"body": ["toSeq"]
+	},
+	"add":{
+		"scope":"nim",
+		"prefix":"add",
+		"body": ["add(${1|val})"]
+	},
+	"contains":{
+		"scope":"nim",
+		"prefix":"contains",
+		"body": ["contains(${1|val})"]
+	},
+	"map/apply":{
+		"scope":"nim",
+		"prefix":"map/apply",
+		"body": ["${1|map,apply|}($0)"]
+	},
+	"deduplicate":{
+		"scope":"nim",
+		"prefix":"deduplicate",
+		"body": ["deduplicate"]
+	},
+	"map/applyIt":{
+		"scope":"nim",
+		"prefix":"map/apply/filterIt",
+		"body": ["${1|map,apply,filter|}It(it$2)"]
+	},
+	"all/anyIt":{
+		"scope":"nim",
+		"prefix":"all/anyIt",
+		"body": ["${1|all,any|}It(it$2)"]
+	},
+	"lower/upperBound":{
+		"scope":"nim",
+		"prefix":"lower/upperBound",
+		"body": ["${1|lower,upper|}Bound(${2:val})"]
+	},
+	"toHashSet/OrderdSet":{
+		"scope":"nim",
+		"prefix":"toHashSet/OrderdSet",
+		"body": ["to${1|HashSet,OrderdSet|}"]
+	},
+	"incl/excl":{
+		"scope":"nim",
+		"prefix":"incl/excl",
+		"body": ["${1|incl,excl|}(${2:val})"]
+	},
+	"contains":{
+		"scope":"nim",
+		"prefix":"contains",
+		"body": ["contains(${1:val})"]
+	},
+	"toDeque/HeapQueue":{
+		"scope":"nim",
+		"prefix":"toDeque/HeapQueue",
+		"body": ["to${1|Deque,HeapQueue|}"]
+	},
+	"addFirst/Last":{
+		"scope":"nim",
+		"prefix":"addFirst/Last",
+		"body": ["add${1|First,Last|}(${2:val})"]
+	},
+	"popFirst/Last":{
+		"scope":"nim",
+		"prefix":"popFirst/Last",
+		"body": ["pop${1|First,Last|}"]
+	},
+	"^":{
+		"scope":"nim",
+		"prefix":"^",
+		"body": ["^"]
+	},
+	"abs":{
+		"scope":"nim",
+		"prefix":"abs",
+		"body": ["abs($0)"]
+	},
+	"fac":{
+		"scope":"nim",
+		"prefix":"fac",
+		"body": ["fac($0)"]
+	},
+	"max/min=":{
+		"scope":"nim",
+		"prefix":"max/min=",
+		"body": ["${1|max,min|}="]
+	},
+	"for":{
+		"scope":"nim",
+		"prefix":"for",
+		"body": [
+      "for ${1:i} in ${2:0}..${3:<}${4:N}:",
+      "\t$0"
     ]
 	},
-	"readLine string":{
+	"block":{
 		"scope":"nim",
-		"prefix":"readLine string",
+		"prefix":"block",
+		"body": ["block"]
+	},
+	"nextPermutation":{
+		"scope":"nim",
+		"prefix":"nextPermutation",
 		"body": [
-      "import strutils",
-      "val",
-      "\tr=stdin.readLine.split"
-    ]
+			"while true:",
+			"\t",
+			"\tif not ${1:arr}.nextPermutation(): break"]
 	},
-	"readAll int":{
+	"echo":{
 		"scope":"nim",
-		"prefix":"readAll int",
-		"body": [
-      "import strutils,sequtils",
-      "val",
-      "\tr=stdin.readAll.split.map parseInt"
-    ]
+		"prefix":"echo",
+		"body": ["echo"]
 	},
-	"readAll string":{
+	"join":{
 		"scope":"nim",
-		"prefix":"readAll string",
-		"body": [
-      "import strutils",
-      "val",
-      "\tr=stdin.readAll.split"
-    ]
+		"prefix":"join",
+		"body": ["join($1)"]
 	},
-	"parseInt":{
+	"quit":{
 		"scope":"nim",
-		"prefix":"parseInt",
-		"body": [".parseInt"]
-	},
-	"parseFloat":{
-		"scope":"nim",
-		"prefix":"parseFloat",
-		"body": [".parseFloat"]
+		"prefix":"quit",
+		"body": ["quit()"]
 	},
 }

@@ -5,8 +5,8 @@
             "label": "build nim",
             "group": {
                 "kind": "build",
-            //    "isDefault": true
-                "isDefault": false
+                "isDefault": true
+            //    "isDefault": false
             },
             "type": "shell",
             "command": "${userHome}/.nimble/bin/nim",
@@ -32,7 +32,8 @@
             "label": "build cpp",
             "group": {
                 "kind": "build",
-                "isDefault":true
+                "isDefault": false
+            //    "isDefault":true
             },
             "type": "shell",
             "command": "/usr/bin/g++-12",
