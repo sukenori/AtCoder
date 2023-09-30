@@ -2,140 +2,195 @@
 	"proc foo":{
 		"scope":"nim",
 		"prefix":"proc foo",
-		"body": [
+		"body":[
 			"proc foo*()=",
 			"",
 			"foo()"
 		]
 	},
+	"chaemon header":{
+		"scope":"nim",
+		"prefix":"chaemon header",
+		"body":[
+			"include atcoder/${1|extra/header/chaemon_header,header|}",
+			"let"
+			"\t${2:var}=next${3|Int,String,Float|}()"
+		]
+	},
 	"header":{
 		"scope":"nim",
 		"prefix":"header",
-		"body": [
-			"include atcoder/header",
-			"let"
-			"\t${1:var}=next${2|Int,String,Float|}()"
-		]
+		"body":["include atcoder/${1|header,extra/header/chaemon_header|}"]
 	},
+	"bitutils":{
+		"scope":"nim",
+		"prefix":"bitutils",
+		"body": ["import atcoder/extra/other/bitutils"]
+	},	
 	"nextInt/String/Float":{
 		"scope":"nim",
 		"prefix":"nextInt/String/Float",
-		"body": ["next${1|Int,String,Float|}()"]
+		"body":["next${1|Int,String,Float|}()"]
 	},
 	"multiple nextInt/String/Float":{
 		"scope":"nim",
 		"prefix":"multiple nextInt/String/Float",
-		"body": ["newSeqWith(${1:N},next${2|Int,String,Float|}())"]
+		"body":["newSeqWith(${1:N},next${2|Int,String,Float|}())"]
 	},
 	"var":{
 		"scope":"nim",
 		"prefix":"var",
-		"body": ["var"]
+		"body":["var"]
 	},
 	"let":{
 		"scope":"nim",
 		"prefix":"let",
-		"body": ["let"]
+		"body":["let"]
 	},
 	"inf":{
 		"scope":"nim",
 		"prefix":"inf",
-		"body": ["inf"]
+		"body":["${1:T}.inf"]
 	},
 	"readLine":{
 		"scope":"nim",
 		"prefix":"readLine",
-		"body": ["stdin.readLine"]
+		"body":["stdin.readLine"]
 	},
 	"multiple readLine":{
 		"scope":"nim",
 		"prefix":"multiple readLine",
-		"body": ["newSeqWith(${2:N},stdin.readLine)"]
+		"body":["newSeqWith(${2:N},stdin.readLine)"]
 	},
 	"split":{
 		"scope":"nim",
 		"prefix":"split",
-		"body": ["split"]
+		"body":["split"]
 	},
 	"parseInt/Float":{
 		"scope":"nim",
 		"prefix":"parseInt/Float",
-		"body": ["parse${1|Int,Floaat|}"]
+		"body":["parse${1|Int,Floaat|}"]
 	},
 	"chartoint":{
 		"scope":"nim",
 		"prefix":"chartoint",
-		"body": ["${1:n}[0]"]
+		"body":["${1:n}[0]"]
 	},
 	"inttochar":{
 		"scope":"nim",
 		"prefix":"inttochar",
-		"body": ["${1:char}.parseInt"]
+		"body":["${1:char}.parseInt"]
 	},
 	"repeat":{
 		"scope":"nim",
 		"prefix":"repeat",
-		"body": ["repeat($0)"]
+		"body":b["repeat($0)"]
 	},
 	"replace":{
 		"scope":"nim",
 		"prefix":"replace",
-		"body": ["replace(\"${1:str}\",\"${2:str}\")"]
+		"body":["replace(\"${1:str}\",\"${2:str}\")"]
 	},
 	"pattern match":{
 		"scope":"nim",
 		"prefix":"pattern match",
-		"body": ["match(re\"${1:pattern}\")"]
+		"body":["match(re\"${1:pattern}\")"]
+	},
+	"toLower/UpperAscii":{
+		"scope":"nim",
+		"prefix":"toLower/UpperAscii",
+		"body":["to${1|Lower,Upper|}Ascii"]
 	},
 	"sorted":{
 		"scope":"nim",
 		"prefix":"sorted",
-		"body": ["sorted${1:(Descending)}"]
+		"body":["sorted${1:(Descending)}"]
+	},
+	"sortedByIt":{
+		"scope":"nim",
+		"prefix":"sortedByIt",
+		"body":["sortedBuIt(it.${1:name})"]
 	},
 	"reversed":{
 		"scope":"nim",
 		"prefix":"reversed",
-		"body": ["reversed"]
+		"body":["reversed"]
 	},
 	"count":{
 		"scope":"nim",
 		"prefix":"count",
-		"body": ["coount($0)"]
+		"body":["count($0)"]
+	},
+	"tuple":{
+		"scope":"nim",
+		"prefix":"tuple",
+		"body":["tuple[${1:name}:${2:T}]"]
 	},
 	"newSeq":{
 		"scope":"nim",
 		"prefix":"newSeq",
-		"body": ["newSeq[${1:T}](${2:len})"]
+		"body":["newSeq[${1:T}](${2:len})"]
 	},
 	"newSeqWith":{
 		"scope":"nim",
 		"prefix":"newSeqWith",
-		"body": ["newSeqWith(${1:n},${2:val})"]
+		"body":["newSeqWith(${1:n},${2:val})"]
 	},
-	"toSeq/HashSet/OrderdSet":{
+	"toSeq":{
 		"scope":"nim",
 		"prefix":"toSeq",
-		"body": ["toSeq"]
+		"body":["toSeq"]
 	},
+	"setLen":{
+		"scope":"nim",
+		"prefix":"setLen",
+		"body":["setLen(${1:val})"]
+	},	
 	"add":{
 		"scope":"nim",
 		"prefix":"add",
-		"body": ["add(${1|val})"]
+		"body":["add(${1:val})"]
+	},
+	"insert":{
+		"scope":"nim",
+		"prefix":"insert",
+		"body":["insert(${1:seq},${2:n})"]
 	},
 	"contains":{
 		"scope":"nim",
 		"prefix":"contains",
-		"body": ["contains(${1|val})"]
+		"body":["contains(${1:val})"]
 	},
-	"map/apply":{
+	"sum":{
 		"scope":"nim",
-		"prefix":"map/apply",
-		"body": ["${1|map,apply|}($0)"]
+		"prefix":"sum",
+		"body":["sum"]
+	},
+	"sum 2D":{
+		"scope":"nim",
+		"prefix":"sum 2D",
+		"body":["${1:seq}.mapIt(sum(it)).sum"]
+	},
+	"lower/upperBound":{
+		"scope":"nim",
+		"prefix":"lower/upperBound",
+		"body":["${1|lower,upper|}Bound(${2:val})"]
 	},
 	"deduplicate":{
 		"scope":"nim",
 		"prefix":"deduplicate",
-		"body": ["deduplicate"]
+		"body":["deduplicate"]
+	},
+	"map/apply":{
+		"scope":"nim",
+		"prefix":"map/apply",
+		"body":["${1|map,apply|}($0)"]
+	},
+	"foldl/r":{
+		"scope":"nim",
+		"prefix":"foldl/r",
+		"body":["fold${1|l,r|}(${2:f}(a,b))"]
 	},
 	"map/applyIt":{
 		"scope":"nim",
@@ -145,67 +200,87 @@
 	"all/anyIt":{
 		"scope":"nim",
 		"prefix":"all/anyIt",
-		"body": ["${1|all,any|}It(it$2)"]
-	},
-	"lower/upperBound":{
-		"scope":"nim",
-		"prefix":"lower/upperBound",
-		"body": ["${1|lower,upper|}Bound(${2:val})"]
-	},
-	"toHashSet/OrderdSet":{
-		"scope":"nim",
-		"prefix":"toHashSet/OrderdSet",
-		"body": ["to${1|HashSet,OrderdSet|}"]
-	},
-	"incl/excl":{
-		"scope":"nim",
-		"prefix":"incl/excl",
-		"body": ["${1|incl,excl|}(${2:val})"]
-	},
-	"contains":{
-		"scope":"nim",
-		"prefix":"contains",
-		"body": ["contains(${1:val})"]
+		"body":["${1|all,any|}It(it$2)"]
 	},
 	"toDeque/HeapQueue":{
 		"scope":"nim",
 		"prefix":"toDeque/HeapQueue",
-		"body": ["to${1|Deque,HeapQueue|}"]
+		"body":["to${1|Deque,HeapQueue|}"]
 	},
 	"addFirst/Last":{
 		"scope":"nim",
 		"prefix":"addFirst/Last",
-		"body": ["add${1|First,Last|}(${2:val})"]
+		"body":["add${1|First,Last|}(${2:val})"]
 	},
 	"popFirst/Last":{
 		"scope":"nim",
 		"prefix":"popFirst/Last",
-		"body": ["pop${1|First,Last|}"]
+		"body":["pop${1|First,Last|}"]
+	},
+	"toHashSet/OrderdSet":{
+		"scope":"nim",
+		"prefix":"toHashSet/OrderdSet",
+		"body":["to${1|HashSet,OrderdSet|}"]
+	},
+	"incl/excl":{
+		"scope":"nim",
+		"prefix":"incl/excl",
+		"body":["${1|incl,excl|}(${2:val})"]
+	},
+	"contains":{
+		"scope":"nim",
+		"prefix":"contains",
+		"body":["contains(${1:val})"]
+	},
+	"newTable":{
+		"scope":"nim",
+		"prefix":"newTable",
+		"body":["newTable[${1:T},${2:T}]()"]
+	},
+	"keys/values/pairs":{
+		"scope":"nim",
+		"prefix":"keys/values/pairs",
+		"body":["${1|keys,values,pairs|}"]
+	},
+	"hasKey":{
+		"scope":"nim",
+		"prefix":"hasKey",
+		"body":["hasKey"]
 	},
 	"^":{
 		"scope":"nim",
 		"prefix":"^",
-		"body": ["^"]
+		"body":["^"]
 	},
 	"abs":{
 		"scope":"nim",
 		"prefix":"abs",
-		"body": ["abs($0)"]
+		"body":["abs($0)"]
 	},
 	"fac":{
 		"scope":"nim",
 		"prefix":"fac",
-		"body": ["fac($0)"]
+		"body":["fac($0)"]
+	},
+	"gcd/lcm":{
+		"scope":"nim",
+		"prefix":"gcd/lcm",
+		"body":["${1|gcd,lcm|}(${2:a},${3:b})"]
 	},
 	"max/min=":{
 		"scope":"nim",
 		"prefix":"max/min=",
-		"body": ["${1|max,min|}="]
+		"body":["${1|max,min|}="]
+	},
+	"in/notin":{
+		"scope":"nim",
+		"prefix":"in/notin",
+		"body":["${1|in,notin|}"]
 	},
 	"for":{
 		"scope":"nim",
 		"prefix":"for",
-		"body": [
+		"body":[
       "for ${1:i} in ${2:0}..${3:<}${4:N}:",
       "\t$0"
     ]
@@ -213,29 +288,86 @@
 	"block":{
 		"scope":"nim",
 		"prefix":"block",
-		"body": ["block"]
+		"body":["block"]
+	},
+  "Knapsack DP":{
+    "scope":"nim",
+    "prefix":"Knapsack DP",
+    "body":[
+      "for i in 0..<N:",
+			"\tfor j in countdown(W,w[i]):",
+      "\t\tdp[j].max=dp[j-w[i]]+v[i]",
+      "echo dp[W]"
+		]
+	},
+	"Unbounded Knapsack DP":{
+    "scope":"nim",
+    "prefix":"Unbounded Knapsack DP",
+    "body":[
+      "for i in 0..<N:",
+			"\tfor j in w[i]..W:",
+      "\t\tdp[j].max=dp[j-w[i]]+v[i]",
+      "echo dp[W]"
+		]
+	},
+	"graph":{
+		"scope":"nim",
+		"prefix":"graph",
+		"body":[
+			"var g=newSeq[newSeq[tuple[t,w:int]]()](N+1)",
+			"for _ in 1..M:",
+			"\tlet u,v,w=nextInt()",
+			"\tg[u].add((v,w)); g[v].add((u,w))"]
+	},
+	"Depth-First Serch":{
+		"scope":"nim",
+		"prefix":"Depth-First Serch",
+		"body":[
+			"var d=newSeq[bool](N+1)",
+			"proc f(i:int)=",
+			"\tfor j in g[i]:",
+			"\t\td[j.t]=true; f(j.t)",
+			"\t\td[j.t]=false"]
 	},
 	"nextPermutation":{
 		"scope":"nim",
 		"prefix":"nextPermutation",
-		"body": [
+		"body":[
 			"while true:",
 			"\t",
 			"\tif not ${1:arr}.nextPermutation(): break"]
 	},
+  "sentinel":{
+    "scope":"nim",
+    "prefix":"sentinel",
+    "body":[
+			"var m=newSeqWith(H,\"#\"&nextString()&\"#\")",
+      "for i in [0,H+1]: A.insert(\"#\".repeat(W+1),i)"
+    ]
+  },
+  "grid move":{
+    "scope":"nim",
+    "prefix":"grid move",
+    "body":[
+      "let di=[-1,0,1,0]; let dj=[0,1,0,-1]",
+      "for k in 0..3:",
+      "\tlet ni=i+di[k]; let nj=j+dj[k]",
+      "\tif d[ni][nj]==(-1): d[ni][nj]=d[i][j]+1"
+    ]
+  },
 	"echo":{
 		"scope":"nim",
 		"prefix":"echo",
-		"body": ["echo"]
+		"body":["echo"]
 	},
 	"join":{
 		"scope":"nim",
 		"prefix":"join",
-		"body": ["join($1)"]
+		"body":["join($1)"]
 	},
 	"quit":{
 		"scope":"nim",
 		"prefix":"quit",
-		"body": ["quit()"]
+		"body":["quit()"]
 	},
 }

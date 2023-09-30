@@ -12,6 +12,7 @@
             "command": "${userHome}/.nimble/bin/nim",
             "args": [
                 //"cpp",
+                //"--cc:gcc",
                 "c",
                 //"-d:release",
                 //"--opt:speed",

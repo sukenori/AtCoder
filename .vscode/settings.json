@@ -12,5 +12,6 @@
   "[python]": {
     "editor.tabSize": 4
   },
-  "nim.enableNimsuggest": true
+  "nim.enableNimsuggest": false,
+  "nim.lintOnSave": false
 }

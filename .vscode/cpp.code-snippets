@@ -601,7 +601,7 @@
       "}",
       "cout<<dp[W]<<endl;"
     ]
-  },  
+  },
   "undirected graph":{
     "scope":"cpp",
     "prefix":"undirected graph",
