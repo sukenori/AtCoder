@@ -8,25 +8,38 @@
 			"foo()"
 		]
 	},
-	"chaemon header":{
+	"header":{
 		"scope":"nim",
-		"prefix":"chaemon header",
+		"prefix":"header",
 		"body":[
-			"include atcoder/${1|extra/header/chaemon_header,header|}",
+			"include atcoder/${1|header,extra/header/chaemon_header|}",
 			"let"
 			"\t${2:var}=next${3|Int,String,Float|}()"
 		]
 	},
-	"header":{
+	"chaemon header":{
 		"scope":"nim",
-		"prefix":"header",
-		"body":["include atcoder/${1|header,extra/header/chaemon_header|}"]
+		"prefix":"chaemon header",
+		"body":["include atcoder/${1|extra/header/chaemon_header,header|}"]
+	},
+	"import":{
+		"scope":"nim",
+		"prefix":"import",
+		"body":["import atcoder/extra/math/matrix"]
 	},
 	"bitutils":{
 		"scope":"nim",
 		"prefix":"bitutils",
 		"body": ["import atcoder/extra/other/bitutils"]
-	},	
+	},
+	"modint":{
+		"scope":"nim",
+		"prefix":"modint",
+		"body":[
+			"import atcoder/modint",
+			"modint${1|998244353,1000000007|}"
+		]
+	},
 	"nextInt/String/Float":{
 		"scope":"nim",
 		"prefix":"nextInt/String/Float",
@@ -82,15 +95,20 @@
 		"prefix":"inttochar",
 		"body":["${1:char}.parseInt"]
 	},
-	"repeat":{
-		"scope":"nim",
-		"prefix":"repeat",
-		"body":b["repeat($0)"]
-	},
 	"replace":{
 		"scope":"nim",
 		"prefix":"replace",
 		"body":["replace(\"${1:str}\",\"${2:str}\")"]
+	},
+	"starts/endsWith":{
+		"scope":"nim",
+		"prefix":"starts/endsWith",
+		"body":["${1|starts,ends|}With"]
+	},
+	"repeat":{
+		"scope":"nim",
+		"prefix":"repeat",
+		"body":b["repeat($0)"]
 	},
 	"pattern match":{
 		"scope":"nim",
@@ -107,15 +125,15 @@
 		"prefix":"sorted",
 		"body":["sorted${1:(Descending)}"]
 	},
-	"sortedByIt":{
-		"scope":"nim",
-		"prefix":"sortedByIt",
-		"body":["sortedBuIt(it.${1:name})"]
-	},
 	"reversed":{
 		"scope":"nim",
 		"prefix":"reversed",
 		"body":["reversed"]
+	},
+	"find":{
+		"scope":"nim",
+		"prefix":"find",
+		"body":["find($0)"]
 	},
 	"count":{
 		"scope":"nim",
@@ -127,6 +145,16 @@
 		"prefix":"tuple",
 		"body":["tuple[${1:name}:${2:T}]"]
 	},
+	"sortedByIt":{
+		"scope":"nim",
+		"prefix":"sortedByIt",
+		"body":["sortedBuIt(it.${1:name})"]
+	},
+	"toSeq":{
+		"scope":"nim",
+		"prefix":"toSeq",
+		"body":["toSeq"]
+	},
 	"newSeq":{
 		"scope":"nim",
 		"prefix":"newSeq",
@@ -136,11 +164,6 @@
 		"scope":"nim",
 		"prefix":"newSeqWith",
 		"body":["newSeqWith(${1:n},${2:val})"]
-	},
-	"toSeq":{
-		"scope":"nim",
-		"prefix":"toSeq",
-		"body":["toSeq"]
 	},
 	"setLen":{
 		"scope":"nim",
@@ -157,10 +180,10 @@
 		"prefix":"insert",
 		"body":["insert(${1:seq},${2:n})"]
 	},
-	"contains":{
+	"concat":{
 		"scope":"nim",
-		"prefix":"contains",
-		"body":["contains(${1:val})"]
+		"prefix":"concat",
+		"body":["concat(${1:seq})"]
 	},
 	"sum":{
 		"scope":"nim",
@@ -202,6 +225,11 @@
 		"prefix":"all/anyIt",
 		"body":["${1|all,any|}It(it$2)"]
 	},
+	"transpose":{
+		"scope":"nim",
+		"prefix":"transpose",
+		"body":["block: collect(newSeq): (for i in 0..n<<1: ${1:seq}.mapIt(it[i]))"]
+	},
 	"toDeque/HeapQueue":{
 		"scope":"nim",
 		"prefix":"toDeque/HeapQueue",
@@ -232,6 +260,11 @@
 		"prefix":"contains",
 		"body":["contains(${1:val})"]
 	},
+	"in/notin":{
+		"scope":"nim",
+		"prefix":"in/notin",
+		"body":["${1|in,notin|}"]
+	},
 	"newTable":{
 		"scope":"nim",
 		"prefix":"newTable",
@@ -245,7 +278,7 @@
 	"hasKey":{
 		"scope":"nim",
 		"prefix":"hasKey",
-		"body":["hasKey"]
+		"body":["hasKey(${1:key})"]
 	},
 	"^":{
 		"scope":"nim",
@@ -262,20 +295,23 @@
 		"prefix":"fac",
 		"body":["fac($0)"]
 	},
-	"gcd/lcm":{
-		"scope":"nim",
-		"prefix":"gcd/lcm",
-		"body":["${1|gcd,lcm|}(${2:a},${3:b})"]
-	},
 	"max/min=":{
 		"scope":"nim",
 		"prefix":"max/min=",
 		"body":["${1|max,min|}="]
 	},
-	"in/notin":{
+	"gcd/lcm":{
 		"scope":"nim",
-		"prefix":"in/notin",
-		"body":["${1|in,notin|}"]
+		"prefix":"gcd/lcm",
+		"body":["${1|gcd,lcm|}(${2:a},${3:b})"]
+	},
+	"N-adic numbe":{
+		"scope":"nim",
+		"prefix":"N-adic numbe",
+		"body":[
+      "var a:seq[int]",
+			"while n>0: a.insert(n%b,0); n//=b"
+    ]
 	},
 	"for":{
 		"scope":"nim",
@@ -369,5 +405,10 @@
 		"scope":"nim",
 		"prefix":"quit",
 		"body":["quit()"]
+	},
+	"dump":{
+		"scope":"nim",
+		"prefix":"dump",
+		"body":["dump($0)"]
 	},
 }
