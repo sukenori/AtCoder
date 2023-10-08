@@ -25,21 +25,41 @@
 	"import":{
 		"scope":"nim",
 		"prefix":"import",
-		"body":["import atcoder/extra/math/matrix"]
+		"body":["import ${1|heapqueue,atcoder/extra/math/matrix,atcoder/extra/other/bitutils|}"]
 	},
 	"bitutils":{
 		"scope":"nim",
 		"prefix":"bitutils",
 		"body": ["import atcoder/extra/other/bitutils"]
 	},
+	"toBitStr":{
+		"scope":"nim",
+		"prefix":"toBitStr",
+		"body": ["toBitStr"]
+	},
 	"modint":{
 		"scope":"nim",
 		"prefix":"modint",
 		"body":[
 			"import atcoder/modint",
-			"modint${1|998244353,1000000007|}"
+			"type mint=modint${1|998244353,1000000007|}"
 		]
 	},
+	"modint val":{
+    "scope":"nim",
+    "prefix":"modint val",
+    "body":["${1:x}.val()"]
+  },
+  "modint pow":{
+    "scope":"nim",
+    "prefix":"modint pow",
+    "body":["${1:x}.pow(${2:n})"]
+  },
+  "modint inv":{
+    "scope":"nim",
+    "prefix":"modint inv",
+    "body":["${1:x}.inv()"]
+  },
 	"nextInt/String/Float":{
 		"scope":"nim",
 		"prefix":"nextInt/String/Float",
@@ -225,6 +245,11 @@
 		"prefix":"all/anyIt",
 		"body":["${1|all,any|}It(it$2)"]
 	},
+	"sortedByIt":{
+		"scope":"nim",
+		"prefix":"sortedByIt",
+		"body":["sortedByIt(it$1)"]
+	},
 	"transpose":{
 		"scope":"nim",
 		"prefix":"transpose",
@@ -279,6 +304,11 @@
 		"scope":"nim",
 		"prefix":"hasKey",
 		"body":["hasKey(${1:key})"]
+	},
+	"hasKeyOrPut":{
+		"scope":"nim",
+		"prefix":"hasKeyOrPut",
+		"body":["hasKeyOrPut(${1:key},${2:val})"]
 	},
 	"^":{
 		"scope":"nim",
