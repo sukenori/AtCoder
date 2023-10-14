@@ -24,18 +24,8 @@
 	},
 	"import":{
 		"scope":"nim",
-		"prefix":"import",
+		"prefix":"import heapqueue/matrix/bitutils",
 		"body":["import ${1|heapqueue,atcoder/extra/math/matrix,atcoder/extra/other/bitutils|}"]
-	},
-	"bitutils":{
-		"scope":"nim",
-		"prefix":"bitutils",
-		"body": ["import atcoder/extra/other/bitutils"]
-	},
-	"toBitStr":{
-		"scope":"nim",
-		"prefix":"toBitStr",
-		"body": ["toBitStr"]
 	},
 	"modint":{
 		"scope":"nim",
@@ -60,6 +50,11 @@
     "prefix":"modint inv",
     "body":["${1:x}.inv()"]
   },
+	"toBitStr":{
+		"scope":"nim",
+		"prefix":"toBitStr",
+		"body": ["toBitStr"]
+	},
 	"nextInt/String/Float":{
 		"scope":"nim",
 		"prefix":"nextInt/String/Float",
@@ -68,23 +63,18 @@
 	"multiple nextInt/String/Float":{
 		"scope":"nim",
 		"prefix":"multiple nextInt/String/Float",
-		"body":["newSeqWith(${1:N},next${2|Int,String,Float|}())"]
-	},
-	"var":{
-		"scope":"nim",
-		"prefix":"var",
-		"body":["var"]
-	},
-	"let":{
-		"scope":"nim",
-		"prefix":"let",
-		"body":["let"]
+		"body":["Seq[${1:N}:next${2|Int,String,Float|}()]"]
 	},
 	"inf":{
 		"scope":"nim",
 		"prefix":"inf",
-		"body":["${1:T}.inf"]
+		"body":["${1|int,float|}.inf"]
 	},
+  "PI":{
+    "scope":"nim",
+    "prefix":"PI",
+    "body":["PI"]
+  },
 	"readLine":{
 		"scope":"nim",
 		"prefix":"readLine",
@@ -105,40 +95,50 @@
 		"prefix":"parseInt/Float",
 		"body":["parse${1|Int,Floaat|}"]
 	},
-	"chartoint":{
+	"char to int":{
 		"scope":"nim",
-		"prefix":"chartoint",
+		"prefix":"char to int",
+		"body":["${1:char}.parseInt"]
+	},
+	"int to char":{
+		"scope":"nim",
+		"prefix":"int to char",
 		"body":["${1:n}[0]"]
 	},
-	"inttochar":{
+	"len":{
 		"scope":"nim",
-		"prefix":"inttochar",
-		"body":["${1:char}.parseInt"]
+		"prefix":"len",
+		"body":["len"]
+	},
+	"repeat":{
+		"scope":"nim",
+		"prefix":"repeat",
+		"body":["repeat($0)"]
 	},
 	"replace":{
 		"scope":"nim",
 		"prefix":"replace",
 		"body":["replace(\"${1:str}\",\"${2:str}\")"]
 	},
-	"starts/endsWith":{
+	"delete":{
 		"scope":"nim",
-		"prefix":"starts/endsWith",
-		"body":["${1|starts,ends|}With"]
-	},
-	"repeat":{
-		"scope":"nim",
-		"prefix":"repeat",
-		"body":b["repeat($0)"]
-	},
-	"pattern match":{
-		"scope":"nim",
-		"prefix":"pattern match",
-		"body":["match(re\"${1:pattern}\")"]
+		"prefix":"dbelete",
+		"body":["delete(${1:first},${2:last})"]
 	},
 	"toLower/UpperAscii":{
 		"scope":"nim",
 		"prefix":"toLower/UpperAscii",
 		"body":["to${1|Lower,Upper|}Ascii"]
+	},
+	"starts/continues/endsWith":{
+		"scope":"nim",
+		"prefix":"starts/continues/endsWith",
+		"body":["${1|starts,continues,ends|}With"]
+	},
+	"pattern match":{
+		"scope":"nim",
+		"prefix":"pattern match",
+		"body":["match(re\"${1:pattern}\")"]
 	},
 	"sorted":{
 		"scope":"nim",
@@ -170,10 +170,15 @@
 		"prefix":"sortedByIt",
 		"body":["sortedBuIt(it.${1:name})"]
 	},
-	"toSeq":{
+	"Seq":{
 		"scope":"nim",
-		"prefix":"toSeq",
-		"body":["toSeq"]
+		"prefix":"Seq",
+		"body":["Seq[${1:len}${2:,len}:${3:val}]"]
+	},
+	"nil seq":{
+		"scope":"nim",
+		"prefix":"nil seq",
+		"body":[" @${1:type}"]
 	},
 	"newSeq":{
 		"scope":"nim",
@@ -185,11 +190,26 @@
 		"prefix":"newSeqWith",
 		"body":["newSeqWith(${1:n},${2:val})"]
 	},
+	"toSeq":{
+		"scope":"nim",
+		"prefix":"toSeq",
+		"body":["toSeq"]
+	},
+	"reset":{
+		"scope":"nim",
+		"prefix":"reset",
+		"body":["reset"]
+	},	
 	"setLen":{
 		"scope":"nim",
 		"prefix":"setLen",
 		"body":["setLen(${1:val})"]
-	},	
+	},
+	"fill":{
+		"scope":"nim",
+		"prefix":"fill",
+		"body":["fill(${1:val}${2:,first,last})"]
+	},
 	"add":{
 		"scope":"nim",
 		"prefix":"add",
@@ -240,15 +260,29 @@
 		"prefix":"map/apply/filterIt",
 		"body": ["${1|map,apply,filter|}It(it$2)"]
 	},
+	"filterIt":{
+		"scope":"nim",
+		"prefix":"filterIt",
+		"body": ["filterIt(it$1)"]
+	},
+	"collect":{
+		"scope":"nim",
+		"prefix":"collect",
+		"body": [
+			"(block: collect(newSeq):",
+			"\tfor i in 0..N:",
+			"\t\t)"
+		]
+	},
 	"all/anyIt":{
 		"scope":"nim",
 		"prefix":"all/anyIt",
 		"body":["${1|all,any|}It(it$2)"]
 	},
-	"sortedByIt":{
+	"countup/down":{
 		"scope":"nim",
-		"prefix":"sortedByIt",
-		"body":["sortedByIt(it$1)"]
+		"prefix":"countup/down",
+		"body":["count${1|up,down|}(${2:start},${3:end},${4:step})"]
 	},
 	"transpose":{
 		"scope":"nim",
@@ -290,6 +324,21 @@
 		"prefix":"in/notin",
 		"body":["${1|in,notin|}"]
 	},
+	"intersection":{
+		"scope":"nim",
+		"prefix":"intersection",
+		"body":["*"]
+	},
+	"union":{
+		"scope":"nim",
+		"prefix":"union",
+		"body":["+"]
+	},
+	"difference":{
+		"scope":"nim",
+		"prefix":"difference",
+		"body":["-"]
+	},
 	"newTable":{
 		"scope":"nim",
 		"prefix":"newTable",
@@ -315,15 +364,45 @@
 		"prefix":"^",
 		"body":["^"]
 	},
+	"fac":{
+		"scope":"nim",
+		"prefix":"fac",
+		"body":["fac"]
+	},
+	"floor/round/ceil":{
+    "scope":"nim",
+    "prefix":"floor/round/ceil",
+    "body":["${1|floor,round,ceil|}"]
+  },
+  "floor/ceilDev":{
+    "scope":"nim",
+    "prefix":"floor/ceilDev",
+    "body":["${1|floor,ceil|}Div"]
+  },
+  "sin/cos/tan":{
+    "scope":"nim",
+    "prefix":"sin/cos/tan",
+    "body":["${1:radian}.${2|sin,cos,tan|}"]
+  },
+  "arcsin/cos/tan":{
+    "scope":"nim",
+    "prefix":"arcsin/cos/tan",
+    "body":["arc${1|sin,cos,tan|}"]
+  },
+  "radToDeg/degToRad":{
+    "scope":"nim",
+    "prefix":"radToDeg/degToRad",
+    "body":["${1|radToDeg,degToRad|}"]
+  },
 	"abs":{
 		"scope":"nim",
 		"prefix":"abs",
 		"body":["abs($0)"]
 	},
-	"fac":{
+	"toInt/Float":{
 		"scope":"nim",
-		"prefix":"fac",
-		"body":["fac($0)"]
+		"prefix":"toInt/Float",
+		"body":["to${1|Int,Float|}"]
 	},
 	"max/min=":{
 		"scope":"nim",
@@ -335,9 +414,19 @@
 		"prefix":"gcd/lcm",
 		"body":["${1|gcd,lcm|}(${2:a},${3:b})"]
 	},
-	"N-adic numbe":{
+	"toBin":{
 		"scope":"nim",
-		"prefix":"N-adic numbe",
+		"prefix":"toBin",
+		"body":["toBin(${1:len})"]
+	},
+	"fromBin":{
+		"scope":"nim",
+		"prefix":"fromBin",
+		"body":["fromBin[int](${1:n})"]
+	},	
+	"N-adic number":{
+		"scope":"nim",
+		"prefix":"N-adic number",
 		"body":[
       "var a:seq[int]",
 			"while n>0: a.insert(n%b,0); n//=b"
@@ -376,25 +465,116 @@
       "echo dp[W]"
 		]
 	},
-	"graph":{
+	"initGraph":{
 		"scope":"nim",
-		"prefix":"graph",
+		"prefix":"initGraph",
 		"body":[
-			"var g=newSeq[newSeq[tuple[t,w:int]]()](N+1)",
+			"import atcoder/extra/graph/graph_template"
+			"var g=initGraph(N)",
 			"for _ in 1..M:",
 			"\tlet u,v,w=nextInt()",
-			"\tg[u].add((v,w)); g[v].add((u,w))"]
+			"\tg.add${1|Edge,BiEdge|}(u,v,w)"]
+	},
+	"initDirected/UnDirectedGraph":{
+		"scope":"nim",
+		"prefix":"initDirected/UnDirectedGraph",
+		"body":[
+			"import atcoder/extra/graph/graph_template"
+			"var g=init${1|Directed,UnDirected|}Graph(N,${2:u:seq},${3:v:seq},${4:w:seq})"
+		]
 	},
 	"Depth-First Serch":{
 		"scope":"nim",
 		"prefix":"Depth-First Serch",
 		"body":[
-			"var d=newSeq[bool](N+1)",
+			"var d=Seq[N:true]",
 			"proc f(i:int)=",
+			"\td[i]=false",
 			"\tfor j in g[i]:",
-			"\t\td[j.t]=true; f(j.t)",
-			"\t\td[j.t]=false"]
+			"\t\tif d[j.dst]: f(j.dst)"
+		]
 	},
+  "Breadth-First Serch":{
+    "scope":"nim",
+    "prefix":"Breadth-First Serch",
+    "body":[
+      "var",
+			"\tq=[0].toDeque",
+			"\td=Seq[N:true]",
+			"while q.len>0:",
+      "\tvar i=q.popFirst; d[i]=false",
+			"\tfor j in g[i]:",
+			"\t\tif d[j.dst]: q.addLast(j.dst)"
+    ]
+  },
+  "warshallFloyd":{
+    "scope":"nim",
+    "prefix":"warshallFloyd",
+    "body":[
+			"import atcoder/extra/graph/warshall_floyd",
+      "var g=Seq[N,N:int.inf]",
+			"for _ in 1..M:",
+			"\tlet u,v,w=nextInt()",
+			"\tg[u-1][v-1]=w",
+      "var d=g.warshallFloyd",
+      "echo d[s,t]",
+      "echo d.path(s,t)"
+    ]
+  },
+  "topologicalSort":{
+    "scope":"nim",
+    "prefix":"topologicalSort",
+    "body":[
+			"import atcoder/extra/graph/topological_sort",
+      "var a=g.topologicalSort"
+    ]
+  },
+  "Disjoint Set Union(Union-Find) constructor":{
+    "scope":"nim",
+    "prefix":"Disjoint Set Union(Union-Find) constructor",
+    "body":[
+			"import atcoder/dsu",
+			"var ${1:d}=initDSU(${2:N})"
+		]
+  },
+  "Disjoint Set Union(Union-Find) marge":{
+    "scope":"nim",
+    "prefix":"Disjoint Set Union(Union-Find) marge",
+    "body":["merge(${1:u},${2:v})"]
+  },
+  "Disjoint Set Union(Union-Find) same":{
+    "scope":"nim",
+    "prefix":"Disjoint Set Union(Union-Find) same",
+    "body":["same(${1:u},${2:v})"]
+  },
+  "Disjoint Set Union(Union-Find) leader":{
+    "scope":"nim",
+    "prefix":"Disjoint Set Union(Union-Find) leader",
+    "body":["leader(${1:i})"]
+  },
+  "Disjoint Set Union(Union-Find) size":{
+    "scope":"nim",
+    "prefix":"Disjoint Set Union(Union-Find) size",
+    "body":["size(${1:i})"]
+  },
+  "eratosthenes constructor":{
+    "scope":"nim",
+    "prefix":"eratosthenes constructor",
+    "body":[
+			"import atcoder/extra/math/eratosthenes",
+			"var ${1:e}=initEratosthenes(${2:N})"
+		]
+  },
+  "eratosthenes factor":{
+    "scope":"nim",
+    "prefix":"eratosthenes factor",
+    "body":["${1:e}.factor(${2:n})"]
+  },
+  "eratosthenes divior":{
+    "scope":"nim",
+    "prefix":"eratosthenes divisor",
+    "body":["${1:e}.divisor(${2:n})"]
+  },
 	"nextPermutation":{
 		"scope":"nim",
 		"prefix":"nextPermutation",
@@ -411,14 +591,12 @@
       "for i in [0,H+1]: A.insert(\"#\".repeat(W+1),i)"
     ]
   },
-  "grid move":{
+  "direction":{
     "scope":"nim",
-    "prefix":"grid move",
+    "prefix":"direction",
     "body":[
-      "let di=[-1,0,1,0]; let dj=[0,1,0,-1]",
-      "for k in 0..3:",
-      "\tlet ni=i+di[k]; let nj=j+dj[k]",
-      "\tif d[ni][nj]==(-1): d[ni][nj]=d[i][j]+1"
+      "import atcoder/extra/other/direction",
+      "for (ni,nj) in (i,j).neighbor(${1|dir4,dir8|},[0..H],[0..W]):"
     ]
   },
 	"echo":{
@@ -430,6 +608,11 @@
 		"scope":"nim",
 		"prefix":"join",
 		"body":["join($1)"]
+	},
+	"Yes or No":{
+		"scope":"nim",
+		"prefix":"Yes or No",
+		"body":["echo (if ${1:bool}: \"Yes\" else: \"No\")"]
 	},
 	"quit":{
 		"scope":"nim",
