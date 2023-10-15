@@ -93,7 +93,7 @@
 	"parseInt/Float":{
 		"scope":"nim",
 		"prefix":"parseInt/Float",
-		"body":["parse${1|Int,Floaat|}"]
+		"body":["parse${1|Int,Float|}"]
 	},
 	"char to int":{
 		"scope":"nim",
@@ -109,6 +109,11 @@
 		"scope":"nim",
 		"prefix":"len",
 		"body":["len"]
+	},
+	"align":{
+		"scope":"nim",
+		"prefix":"align",
+		"body":["align(${1:n}${2:,'0'})"]
 	},
 	"repeat":{
 		"scope":"nim",
@@ -364,11 +369,21 @@
 		"prefix":"^",
 		"body":["^"]
 	},
+	"sqrt":{
+		"scope":"nim",
+		"prefix":"^",
+		"body":["^"]
+	},
 	"fac":{
 		"scope":"nim",
 		"prefix":"fac",
 		"body":["fac"]
 	},
+	"frexp":{
+    "scope":"nim",
+    "prefix":"frexp",
+    "body":["frexp${1::tuple[frac:float,exp:int]}"]
+  },
 	"floor/round/ceil":{
     "scope":"nim",
     "prefix":"floor/round/ceil",
