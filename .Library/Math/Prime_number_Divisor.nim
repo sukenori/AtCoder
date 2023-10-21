@@ -5,7 +5,7 @@ e.factor(n)
 
 e.divisor(n)
 #Divisor
-var d=newSeq[int]()
+d:=Seq[0:int]
 for i in 1..N.float.sqrt.int:
   if N%i==0:
     d.add(i)

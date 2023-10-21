@@ -1,6 +1,5 @@
-var
-  q=[0].toDeque
-  d=newSeqWith(N,false)
+q:=[0].toDeque
+d:=Seq[N:false]
 while q.len>0:
   var i=q.popFirst; d[i]=true
   for j in g[i]:

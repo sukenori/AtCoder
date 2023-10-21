@@ -144,12 +144,12 @@
 	"find":{
 		"scope":"nim",
 		"prefix":"find",
-		"body":["find($0)"]
+		"body":["find(${1:val})"]
 	},
 	"count":{
 		"scope":"nim",
 		"prefix":"count",
-		"body":["count($0)"]
+		"body":["count(${1:val})"]
 	},
 	"tuple":{
 		"scope":"nim",
@@ -275,10 +275,10 @@
 		"prefix":"countup/down",
 		"body":["count${1|up,down|}(${2:start},${3:end},${4:step})"]
 	},
-	"toDeque/HeapQueue":{
+	"toDeque":{
 		"scope":"nim",
-		"prefix":"toDeque/HeapQueue",
-		"body":["to${1|Deque,HeapQueue|}"]
+		"prefix":"toDeque",
+		"body":["toDeque"]
 	},
 	"addFirst/Last":{
 		"scope":"nim",
@@ -289,6 +289,31 @@
 		"scope":"nim",
 		"prefix":"popFirst/Last",
 		"body":["pop${1|First,Last|}"]
+	},
+	"toHeapQueue":{
+		"scope":"nim",
+		"prefix":"toHeapQueue",
+		"body":["toHeapQueue"]
+	},
+	"push":{
+		"scope":"nim",
+		"prefix":"push",
+		"body":["push"]
+	},
+	"pop":{
+		"scope":"nim",
+		"prefix":"pop",
+		"body":["pop"]
+	},
+	"find":{
+		"scope":"nim",
+		"prefix":"find",
+		"body":["find(${1:val})"]
+	},
+	"del":{
+		"scope":"nim",
+		"prefix":"del",
+		"body":["del(${1:n})"]
 	},
 	"toHashSet/OrderdSet":{
 		"scope":"nim",
