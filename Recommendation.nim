@@ -1,16 +1,4 @@
 include atcoder/extra/header/chaemon_header
-let
-  N=nextInt()
-  T=nextString()
-  S=nextString()
-proc LCS(S,T:string):int=
-  let
-    lS=S.len
-    lT=T.len
-  var dp=newSeqWith(lS+1,newSeq[int](lT+1))
-  for i in 1..lS:
-    for j in 1..lT:
-      dp[i][j]=[dp[i-1][j],dp[i][j-1],dp[i-1][j-1]+(S[i-1]==T[j-1]).int].max
-  return dp[^1][^1]
-echo S.LCS(T)
-echo T.LCS(S)
+a:=1; b:=1
+if false: a=2; b=2
+echo a,b

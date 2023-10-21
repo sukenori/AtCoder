@@ -11,15 +11,6 @@
 	"header":{
 		"scope":"nim",
 		"prefix":"header",
-		"body":[
-			"include atcoder/${1|header,extra/header/chaemon_header|}",
-			"let"
-			"\t${2:var}=next${3|Int,String,Float|}()"
-		]
-	},
-	"chaemon header":{
-		"scope":"nim",
-		"prefix":"chaemon header",
 		"body":["include atcoder/${1|extra/header/chaemon_header,header|}"]
 	},
 	"import":{
@@ -35,16 +26,6 @@
 			"type mint=modint${1|998244353,1000000007|}"
 		]
 	},
-	"modint val":{
-    "scope":"nim",
-    "prefix":"modint val",
-    "body":["${1:x}.val()"]
-  },
-  "modint pow":{
-    "scope":"nim",
-    "prefix":"modint pow",
-    "body":["${1:x}.pow(${2:n})"]
-  },
   "modint inv":{
     "scope":"nim",
     "prefix":"modint inv",
@@ -154,6 +135,11 @@
 		"scope":"nim",
 		"prefix":"reversed",
 		"body":["reversed"]
+	},
+	"rotatedLeft":{
+		"scope":"nim",
+		"prefix":"rotatedLeft",
+		"body":["rotatedLeft(${1:n})"]
 	},
 	"find":{
 		"scope":"nim",
@@ -288,11 +274,6 @@
 		"scope":"nim",
 		"prefix":"countup/down",
 		"body":["count${1|up,down|}(${2:start},${3:end},${4:step})"]
-	},
-	"transpose":{
-		"scope":"nim",
-		"prefix":"transpose",
-		"body":["block: collect(newSeq): (for i in 0..n<<1: ${1:seq}.mapIt(it[i]))"]
 	},
 	"toDeque/HeapQueue":{
 		"scope":"nim",
@@ -460,160 +441,6 @@
 		"prefix":"block",
 		"body":["block"]
 	},
-  "Knapsack DP":{
-    "scope":"nim",
-    "prefix":"Knapsack DP",
-    "body":[
-      "for i in 0..<N:",
-			"\tfor j in countdown(W,w[i]):",
-      "\t\tdp[j].max=dp[j-w[i]]+v[i]",
-      "echo dp[W]"
-		]
-	},
-	"Unbounded Knapsack DP":{
-    "scope":"nim",
-    "prefix":"Unbounded Knapsack DP",
-    "body":[
-      "for i in 0..<N:",
-			"\tfor j in w[i]..W:",
-      "\t\tdp[j].max=dp[j-w[i]]+v[i]",
-      "echo dp[W]"
-		]
-	},
-	"initGraph":{
-		"scope":"nim",
-		"prefix":"initGraph",
-		"body":[
-			"import atcoder/extra/graph/graph_template"
-			"var g=initGraph(N)",
-			"for _ in 1..M:",
-			"\tlet u,v,w=nextInt()",
-			"\tg.add${1|Edge,BiEdge|}(u,v,w)"]
-	},
-	"initDirected/UnDirectedGraph":{
-		"scope":"nim",
-		"prefix":"initDirected/UnDirectedGraph",
-		"body":[
-			"import atcoder/extra/graph/graph_template"
-			"var g=init${1|Directed,UnDirected|}Graph(N,${2:u:seq},${3:v:seq},${4:w:seq})"
-		]
-	},
-	"Depth-First Serch":{
-		"scope":"nim",
-		"prefix":"Depth-First Serch",
-		"body":[
-			"var d=Seq[N:true]",
-			"proc f(i:int)=",
-			"\td[i]=false",
-			"\tfor j in g[i]:",
-			"\t\tif d[j.dst]: f(j.dst)"
-		]
-	},
-  "Breadth-First Serch":{
-    "scope":"nim",
-    "prefix":"Breadth-First Serch",
-    "body":[
-      "var",
-			"\tq=[0].toDeque",
-			"\td=Seq[N:true]",
-			"while q.len>0:",
-      "\tvar i=q.popFirst; d[i]=false",
-			"\tfor j in g[i]:",
-			"\t\tif d[j.dst]: q.addLast(j.dst)"
-    ]
-  },
-  "warshallFloyd":{
-    "scope":"nim",
-    "prefix":"warshallFloyd",
-    "body":[
-			"import atcoder/extra/graph/warshall_floyd",
-      "var g=Seq[N,N:int.inf]",
-			"for _ in 1..M:",
-			"\tlet u,v,w=nextInt()",
-			"\tg[u-1][v-1]=w",
-      "var d=g.warshallFloyd",
-      "echo d[s,t]",
-      "echo d.path(s,t)"
-    ]
-  },
-  "topologicalSort":{
-    "scope":"nim",
-    "prefix":"topologicalSort",
-    "body":[
-			"import atcoder/extra/graph/topological_sort",
-      "var a=g.topologicalSort"
-    ]
-  },
-  "Disjoint Set Union(Union-Find) constructor":{
-    "scope":"nim",
-    "prefix":"Disjoint Set Union(Union-Find) constructor",
-    "body":[
-			"import atcoder/dsu",
-			"var ${1:d}=initDSU(${2:N})"
-		]
-  },
-  "Disjoint Set Union(Union-Find) marge":{
-    "scope":"nim",
-    "prefix":"Disjoint Set Union(Union-Find) marge",
-    "body":["merge(${1:u},${2:v})"]
-  },
-  "Disjoint Set Union(Union-Find) same":{
-    "scope":"nim",
-    "prefix":"Disjoint Set Union(Union-Find) same",
-    "body":["same(${1:u},${2:v})"]
-  },
-  "Disjoint Set Union(Union-Find) leader":{
-    "scope":"nim",
-    "prefix":"Disjoint Set Union(Union-Find) leader",
-    "body":["leader(${1:i})"]
-  },
-  "Disjoint Set Union(Union-Find) size":{
-    "scope":"nim",
-    "prefix":"Disjoint Set Union(Union-Find) size",
-    "body":["size(${1:i})"]
-  },
-  "eratosthenes constructor":{
-    "scope":"nim",
-    "prefix":"eratosthenes constructor",
-    "body":[
-			"import atcoder/extra/math/eratosthenes",
-			"var ${1:e}=initEratosthenes(${2:N})"
-		]
-  },
-  "eratosthenes factor":{
-    "scope":"nim",
-    "prefix":"eratosthenes factor",
-    "body":["${1:e}.factor(${2:n})"]
-  },
-  "eratosthenes divior":{
-    "scope":"nim",
-    "prefix":"eratosthenes divisor",
-    "body":["${1:e}.divisor(${2:n})"]
-  },
-	"nextPermutation":{
-		"scope":"nim",
-		"prefix":"nextPermutation",
-		"body":[
-			"while true:",
-			"\t",
-			"\tif not ${1:arr}.nextPermutation(): break"]
-	},
-  "sentinel":{
-    "scope":"nim",
-    "prefix":"sentinel",
-    "body":[
-			"var m=newSeqWith(H,\"#\"&nextString()&\"#\")",
-      "for i in [0,H+1]: A.insert(\"#\".repeat(W+1),i)"
-    ]
-  },
-  "direction":{
-    "scope":"nim",
-    "prefix":"direction",
-    "body":[
-      "import atcoder/extra/other/direction",
-      "for (ni,nj) in (i,j).neighbor(${1|dir4,dir8|},[0..H],[0..W]):"
-    ]
-  },
 	"echo":{
 		"scope":"nim",
 		"prefix":"echo",

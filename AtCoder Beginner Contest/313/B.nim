@@ -1,11 +1,7 @@
 include atcoder/header
 let N,M=nextInt()
-include atcoder/extra/graph/topological_sort
-#import atcoder/extra/graph/graph_template
-var g=initGraph(N)
+var ind=newSeqWith(N,0)
 for _ in 1..M:
-  let u,v=nextInt()
-  g.addEdge(u,v)
-
-#var a=g.topologicalSort
-#echo a[0]
+  let u,v=nextInt()-1
+  ind[v]+=1
+echo (if ind.count(0)==1: ind.find(0)+1 else: -1)
