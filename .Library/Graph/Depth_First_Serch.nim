@@ -1,6 +1,6 @@
-var d=newSeqWith(N,false)
+d:=Seq[N:false]
 proc dfs(i:int)=
   d[i]=true
   for j in g[i]:
-    if not dfs[j.t]:
-      f(j.t)
+    if not d[j.t]:
+      dfs(j.t)

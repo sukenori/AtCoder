@@ -15,8 +15,8 @@
 	},
 	"import":{
 		"scope":"nim",
-		"prefix":"import heapqueue/matrix/bitutils",
-		"body":["import ${1|heapqueue,atcoder/extra/math/matrix,atcoder/extra/other/bitutils|}"]
+		"prefix":"import bitutils/matrix",
+		"body":["import ${1|atcoder/extra/other/bitutils,atcoder/extra/math/matrix|}"]
 	},
 	"modint":{
 		"scope":"nim",
@@ -79,12 +79,12 @@
 	"char to int":{
 		"scope":"nim",
 		"prefix":"char to int",
-		"body":["${1:char}.parseInt"]
+		"body":["($${1:char}).parseInt"]
 	},
 	"int to char":{
 		"scope":"nim",
 		"prefix":"int to char",
-		"body":["${1:n}[0]"]
+		"body":["($${1:n})[0]"]
 	},
 	"len":{
 		"scope":"nim",
@@ -211,10 +211,10 @@
 		"prefix":"insert",
 		"body":["insert(${1:seq},${2:n})"]
 	},
-	"concat":{
+	"concat/&":{
 		"scope":"nim",
-		"prefix":"concat",
-		"body":["concat(${1:seq})"]
+		"prefix":"concat/&",
+		"body":["&${1:seq}"]
 	},
 	"sum":{
 		"scope":"nim",
@@ -259,11 +259,7 @@
 	"collect":{
 		"scope":"nim",
 		"prefix":"collect",
-		"body": [
-			"(block: collect(newSeq):",
-			"\tfor i in 0..N:",
-			"\t\t)"
-		]
+		"body": ["(block: collect(newSeq):(for i in 0..<N: $0))"]
 	},
 	"all/anyIt":{
 		"scope":"nim",
@@ -274,6 +270,11 @@
 		"scope":"nim",
 		"prefix":"countup/down",
 		"body":["count${1|up,down|}(${2:start},${3:end},${4:step})"]
+	},
+	"Deque":{
+		"scope":"nim",
+		"prefix":"Deque",
+		"body":["Deque[${1:type}]"]
 	},
 	"toDeque":{
 		"scope":"nim",
@@ -289,6 +290,14 @@
 		"scope":"nim",
 		"prefix":"popFirst/Last",
 		"body":["pop${1|First,Last|}"]
+	},
+	"HeapQueue":{
+		"scope":"nim",
+		"prefix":"HeapQueue",
+		"body":[
+			"import heapqueue",
+			"HeapQueue[${1:type}]"
+		]
 	},
 	"toHeapQueue":{
 		"scope":"nim",
@@ -315,6 +324,11 @@
 		"prefix":"del",
 		"body":["del(${1:n})"]
 	},
+	"HashSet/OrderdSet":{
+		"scope":"nim",
+		"prefix":"HashSet/OrderdSet",
+		"body":["${1|HashSet,OrderdSet|}[${2:type}]"]
+	},
 	"toHashSet/OrderdSet":{
 		"scope":"nim",
 		"prefix":"toHashSet/OrderdSet",
@@ -335,6 +349,11 @@
 		"prefix":"in/notin",
 		"body":["${1|in,notin|}"]
 	},
+	"subset":{
+		"scope":"nim",
+		"prefix":"subset",
+		"body":["<"]
+	},
 	"intersection":{
 		"scope":"nim",
 		"prefix":"intersection",
@@ -349,6 +368,24 @@
 		"scope":"nim",
 		"prefix":"difference",
 		"body":["-"]
+	},
+	"SortedSet":{
+		"scope":"nim",
+		"prefix":"SortedSet",
+		"body":[
+			"import atcoder/extra/structure/set_map",
+			"${1:var}:=initSortedSet[${2:type}]()"
+		]
+	},
+	"begin":{
+		"scope":"nim",
+		"prefix":"begin",
+		"body":["*${1:val}.begin()"]
+	},
+	"end":{
+		"scope":"nim",
+		"prefix":"end",
+		"body":["*${1:val}.end()"]
 	},
 	"newTable":{
 		"scope":"nim",
@@ -459,6 +496,16 @@
 		"body":[
       "for ${1:i} in ${2:0}..${3:<}${4:N}:",
       "\t$0"
+    ]
+	},
+	"case":{
+		"scope":"nim",
+		"prefix":"case",
+		"body":[
+      "case ${1:var}",
+			"of ${2:value}:"
+			"of ${3:value}:"
+			"else:"
     ]
 	},
 	"block":{
