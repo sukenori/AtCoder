@@ -99,7 +99,7 @@
 	"repeat":{
 		"scope":"nim",
 		"prefix":"repeat",
-		"body":["repeat($0)"]
+		"body":["repeat(${1:n})"]
 	},
 	"replace":{
 		"scope":"nim",
@@ -215,6 +215,11 @@
 		"scope":"nim",
 		"prefix":"concat/&",
 		"body":["&${1:seq}"]
+	},
+	"max/minIndex":{
+		"scope":"nim",
+		"prefix":"max/minIndex",
+		"body":["${1|max,min|}Index"]
 	},
 	"sum":{
 		"scope":"nim",
@@ -497,6 +502,21 @@
       "for ${1:i} in ${2:0}..${3:<}${4:N}:",
       "\t$0"
     ]
+	},
+	"continue":{
+		"scope":"nim",
+		"prefix":"cobtinue",
+		"body":["continue"]
+	},
+	"break":{
+		"scope":"nim",
+		"prefix":"break",
+		"body":["break"]
+	},
+	"product":{
+		"scope":"nim",
+		"prefix":"product",
+		"body":["${1:n-dim seq}.product"]
 	},
 	"case":{
 		"scope":"nim",
