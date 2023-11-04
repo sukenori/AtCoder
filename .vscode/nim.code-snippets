@@ -159,7 +159,12 @@
 	"sortedByIt":{
 		"scope":"nim",
 		"prefix":"sortedByIt",
-		"body":["sortedBuIt(it.${1:name})"]
+		"body":["sortedByIt(it.${1:name})"]
+	},
+	"do":{
+		"scope":"nim",
+		"prefix":"do",
+		"body":["sorted do(x,y:seq[int])->int: (result=cmp(x[0],y[0]); if result==0: result=cmp(x[1],y[1]))"]
 	},
 	"Seq":{
 		"scope":"nim",
