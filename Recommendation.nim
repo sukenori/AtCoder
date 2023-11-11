@@ -1,15 +1,27 @@
 include atcoder/extra/header/chaemon_header
-N:=nextInt()
-let R,C=nextString()
-t:=newTable[char,seq[string]]()
-a:=".".repeat(N-3)&"ABC"
-while true:
-  h:=a.replace(".")[0]
-  if t.hasKey(h): t[h].add(a) else: t[h]= @[a]
-  if not a.nextPermutation(): break
-A:=Seq[seq[string]]
-for Ri in R: A.add(t[Ri])
-for Ai in product(A):
-  At:=(block: collect(newSeq):
-    for j in 0..<N<<1: Ai.mapIt(it[j]))
-  echo At.join
+var c,s=nextString()
+a:=""
+if c=="compress":
+  s&="#"; lsi:=s[0]; var cs,dcs= $s[0]
+  for si in s[1..^1]:
+    if si==lsi:
+      if dcs.len>1: a &= "-" & $(dcs.len-1)&dcs[0..^2]
+      cs &= $si; dcs= $si
+    else:
+      if cs.len>1: a &= $(cs.len) & $cs[0]
+      elif si=='#': a &= "-" & $(dcs.len-1)&dcs[1..^1]
+      dcs &= $si; cs= $si
+    lsi=si
+if c=="decompress":
+  dc:=false; f:=false; n:=""
+  for si in s:
+    if si=='-': dc=true
+    elif si.isDigit:
+      if dc:
+        if f: n &= $si; dc=false; f=false
+        else: continue
+      else: n &= $si
+    else:
+      if dc: a &= $si; f=true
+      else: echo n; a &= $si.repeat(n.parseInt); n=""
+echo a

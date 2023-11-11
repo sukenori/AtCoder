@@ -121,6 +121,11 @@
 		"prefix":"starts/continues/endsWith",
 		"body":["${1|starts,continues,ends|}With"]
 	},
+	"isDigit/UpperAscii/LowerAscii":{
+		"scope":"nim",
+		"prefix":"isDigit/UpperAscii/LowerAscii",
+		"body":["is${1|Digit,UpperAscii,LowerAscii|}"]
+	},
 	"pattern match":{
 		"scope":"nim",
 		"prefix":"pattern match",
@@ -551,7 +556,7 @@
 	"Yes or No":{
 		"scope":"nim",
 		"prefix":"Yes or No",
-		"body":["echo (if ${1:bool}: \"Yes\" else: \"No\")"]
+		"body":["echo if ${1:bool}: \"Yes\" else: \"No\""]
 	},
 	"quit":{
 		"scope":"nim",

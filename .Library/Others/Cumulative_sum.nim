@@ -3,5 +3,5 @@ for i in 0..<N:
 
 #2D
 import atcoder/extra/dp/cumulative_sum_2d
-s:=h.initCumulativeSum2D
+s:=A.initCumulativeSum2D
 s[si..ei,sj..ej]
