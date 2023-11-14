@@ -1,27 +1,38 @@
 include atcoder/extra/header/chaemon_header
-var c,s=nextString()
-a:=""
-if c=="compress":
-  s&="#"; lsi:=s[0]; var cs,dcs= $s[0]
-  for si in s[1..^1]:
-    if si==lsi:
-      if dcs.len>1: a &= "-" & $(dcs.len-1)&dcs[0..^2]
-      cs &= $si; dcs= $si
+step:=nextInt()
+case step
+of 1:
+  M:=nextInt()
+  var t=newTable[int,tuple[S,P:int]]()
+  for i in 0..<M:
+    let D,S,P=nextInt()
+    t[D]=(S,P)
+  while true:
+    let _=nextString()
+    let T,D,N=nextInt()
+    if t[D].S>=N:
+      for i in 1..N:
+        echo "recieved order ",T," ",D
+      t[D].S-=N
+    else: echo "sold out ",T
+of 2:
+  var M,K=nextInt()
+  var t=newTable[int,tuple[S,P:int]]()
+  for i in 0..<M:
+    let D,S,P=nextInt()
+    t[D]=(S,P)
+  var order:Deque[int]
+  var cook:set[int]
+  while true:
+    query:=nextString()
+    if query=="received":
+      let _=nextString()
+      let T,D=nextInt()
+      if cook.len<K:
+        echo D; cook.incl(D)
+
     else:
-      if cs.len>1: a &= $(cs.len) & $cs[0]
-      elif si=='#': a &= "-" & $(dcs.len-1)&dcs[1..^1]
-      dcs &= $si; cs= $si
-    lsi=si
-if c=="decompress":
-  dc:=false; f:=false; n:=""
-  for si in s:
-    if si=='-': dc=true
-    elif si.isDigit:
-      if dc:
-        if f: n &= $si; dc=false; f=false
-        else: continue
-      else: n &= $si
-    else:
-      if dc: a &= $si; f=true
-      else: echo n; a &= $si.repeat(n.parseInt); n=""
-echo a
+      D:=nextInt()
+    
+else:
+  quit()

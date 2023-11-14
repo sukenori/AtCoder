@@ -13,10 +13,30 @@
 		"prefix":"header",
 		"body":["include atcoder/${1|extra/header/chaemon_header,header|}"]
 	},
-	"import":{
+	"inf":{
 		"scope":"nim",
-		"prefix":"import bitutils/matrix",
-		"body":["import ${1|atcoder/extra/other/bitutils,atcoder/extra/math/matrix|}"]
+		"prefix":"inf",
+		"body":["${1|int,float|}.inf"]
+	},
+  "PI":{
+    "scope":"nim",
+    "prefix":"PI",
+    "body":["PI"]
+  },
+	"shl/shr":{
+		"scope":"nim",
+		"prefix":"shl/shr",
+		"body": ["${1|shl,shr|}"]
+	},
+	"testBit":{
+		"scope":"nim",
+		"prefix":"testBit",
+		"body": ["testBit(${1:n})"]
+	},
+	"countSetBits":{
+		"scope":"nim",
+		"prefix":"countSetBits",
+		"body": ["countSetBits"]
 	},
 	"modint":{
 		"scope":"nim",
@@ -31,11 +51,6 @@
     "prefix":"modint inv",
     "body":["${1:x}.inv()"]
   },
-	"toBitStr":{
-		"scope":"nim",
-		"prefix":"toBitStr",
-		"body": ["toBitStr"]
-	},
 	"nextInt/String/Float":{
 		"scope":"nim",
 		"prefix":"nextInt/String/Float",
@@ -46,16 +61,6 @@
 		"prefix":"multiple nextInt/String/Float",
 		"body":["Seq[${1:N}:next${2|Int,String,Float|}()]"]
 	},
-	"inf":{
-		"scope":"nim",
-		"prefix":"inf",
-		"body":["${1|int,float|}.inf"]
-	},
-  "PI":{
-    "scope":"nim",
-    "prefix":"PI",
-    "body":["PI"]
-  },
 	"readLine":{
 		"scope":"nim",
 		"prefix":"readLine",
@@ -108,8 +113,13 @@
 	},
 	"delete":{
 		"scope":"nim",
-		"prefix":"dbelete",
+		"prefix":"delete",
 		"body":["delete(${1:first},${2:last})"]
+	},
+	"removePrefix/Suffix":{
+		"scope":"nim",
+		"prefix":"removePrefix/Suffix",
+		"body":["remove${1|Prefix,Suffix|}"]
 	},
 	"toLower/UpperAscii":{
 		"scope":"nim",
@@ -119,7 +129,7 @@
 	"starts/continues/endsWith":{
 		"scope":"nim",
 		"prefix":"starts/continues/endsWith",
-		"body":["${1|starts,continues,ends|}With"]
+		"body":["${1|starts,continues,ends|}With(${2:char/str})"]
 	},
 	"isDigit/UpperAscii/LowerAscii":{
 		"scope":"nim",
@@ -295,6 +305,11 @@
 		"scope":"nim",
 		"prefix":"toDeque",
 		"body":["toDeque"]
+	},
+	"peekFirst/Last":{
+		"scope":"nim",
+		"prefix":"peekFirst/Last",
+		"body":["peek${1|First,Last|}"]
 	},
 	"addFirst/Last":{
 		"scope":"nim",
