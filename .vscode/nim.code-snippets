@@ -369,6 +369,11 @@
 		"prefix":"incl/excl",
 		"body":["${1|incl,excl|}(${2:val})"]
 	},
+	"clear":{
+		"scope":"nim",
+		"prefix":"clear",
+		"body":["clear"]
+	},
 	"contains":{
 		"scope":"nim",
 		"prefix":"contains",
@@ -530,7 +535,7 @@
 	},
 	"continue":{
 		"scope":"nim",
-		"prefix":"cobtinue",
+		"prefix":"continue",
 		"body":["continue"]
 	},
 	"break":{

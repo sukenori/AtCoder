@@ -5,14 +5,14 @@ for i,di in d:
 prod(a..<b)
 
 n:=1; while n<N: n*=2
-s:=Seq[2*n-1:int.inf]
-for di in d:
-  i:=n-1+di
-  while true:
-    s[i].min=di
-    if i>0: i=(i-1)//2 else: break
-proc p(a,b,k,l,r:int):int=
+st:=Seq[2*n-1:int.inf]
+proc u(i,v:int)=
+  j:=n-1+v; st[j]=v
+  while j>0:
+    j=(j-1)//2
+    st[j]=min(st[2*j+1],st[2*j+2])
+proc q(a,b,k,l,r:int):int=
   if r<=a or b<=l: return int.inf
-  elif a<=l and r<=b: return s[k]
+  elif a<=l and r<=b: return st[k]
   else:
-    return min(p(a,b,2*k+1,l,(l+r)//2),p(a,b,2*k+2,(l+r)//2,r))
+    return min(q(a,b,2*k+1,l,(l+r)//2),q(a,b,2*k+2,(l+r)//2,r))
