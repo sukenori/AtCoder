@@ -457,11 +457,6 @@
 		"prefix":"fac",
 		"body":["fac"]
 	},
-	"frexp":{
-    "scope":"nim",
-    "prefix":"frexp",
-    "body":["frexp${1::tuple[frac:float,exp:int]}"]
-  },
 	"floor/round/ceil":{
     "scope":"nim",
     "prefix":"floor/round/ceil",
