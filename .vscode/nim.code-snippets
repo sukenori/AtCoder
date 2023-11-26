@@ -281,20 +281,20 @@
 		"prefix":"filterIt",
 		"body": ["filterIt(it$1)"]
 	},
-	"collect":{
+	"countIt":{
 		"scope":"nim",
-		"prefix":"collect",
-		"body": ["(block: collect(newSeq):(for i in 0..<N: $0))"]
+		"prefix":"countIt",
+		"body": ["countIt(it$1)"]
 	},
 	"all/anyIt":{
 		"scope":"nim",
 		"prefix":"all/anyIt",
 		"body":["${1|all,any|}It(it$2)"]
 	},
-	"countup/down":{
+	"collect":{
 		"scope":"nim",
-		"prefix":"countup/down",
-		"body":["count${1|up,down|}(${2:start},${3:end},${4:step})"]
+		"prefix":"collect",
+		"body": ["(block: collect(newSeq):(for i in 0..<N: $0))"]
 	},
 	"Deque":{
 		"scope":"nim",
@@ -497,6 +497,11 @@
 		"prefix":"max/min=",
 		"body":["${1|max,min|}="]
 	},
+	"clamp":{
+		"scope":"nim",
+		"prefix":"clamp",
+		"body":["clamp(${1:min},${2:max})"]
+	},
 	"gcd/lcm":{
 		"scope":"nim",
 		"prefix":"gcd/lcm",
@@ -527,6 +532,11 @@
       "for ${1:i} in ${2:0}..${3:<}${4:N}:",
       "\t$0"
     ]
+	},
+	"countup/down":{
+		"scope":"nim",
+		"prefix":"countup/down",
+		"body":["count${1|up,down|}(${2:start},${3:end},${4:step})"]
 	},
 	"continue":{
 		"scope":"nim",
