@@ -119,7 +119,7 @@
 	"removePrefix/Suffix":{
 		"scope":"nim",
 		"prefix":"removePrefix/Suffix",
-		"body":["remove${1|Prefix,Suffix|}"]
+		"body":["remove${1|Prefix,Suffix|}(${2:char/str})"]
 	},
 	"toLower/UpperAscii":{
 		"scope":"nim",
@@ -179,7 +179,7 @@
 	"do":{
 		"scope":"nim",
 		"prefix":"do",
-		"body":["sorted do(x,y:seq[int])->int: (result=cmp(x[0],y[0]); if result==0: result=cmp(x[1],y[1]))"]
+		"body":["sorted do(x,y:tuple[int,int])->int: (result=cmp(x[0],y[0]); if result==0: result=cmp(x[1],y[1]))"]
 	},
 	"Seq":{
 		"scope":"nim",
@@ -326,7 +326,7 @@
 		"prefix":"HeapQueue",
 		"body":[
 			"import heapqueue",
-			"HeapQueue[${1:type}]"
+			"var ${1:var}:HeapQueue[${2:type}]"
 		]
 	},
 	"toHeapQueue":{
@@ -409,7 +409,7 @@
 		"prefix":"SortedSet",
 		"body":[
 			"import atcoder/extra/structure/set_map",
-			"${1:var}:=initSortedSet[${2:type}]()"
+			"${1:var}:=initSortedSet[${2:type}](seq)"
 		]
 	},
 	"begin":{
@@ -537,6 +537,19 @@
 		"scope":"nim",
 		"prefix":"countup/down",
 		"body":["count${1|up,down|}(${2:start},${3:end},${4:step})"]
+	},
+	"succ/pred":{
+		"scope":"nim",
+		"prefix":"succ/pred",
+		"body":["${1|succ,pred|}"]
+	},
+	"iterator yield":{
+		"scope":"nim",
+		"prefix":"iterator yield",
+		"body":[
+      "iterator i():T=",
+      "\tyield $0"
+    ]
 	},
 	"continue":{
 		"scope":"nim",

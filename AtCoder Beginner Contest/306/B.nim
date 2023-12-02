@@ -1,5 +1,5 @@
-import atcoder/header,sequtils,math
-let A=newSeqWith(64,nextInt())
-var a:uint=0
-for i,Ai in A:a+=uint(Ai)*uint(2)^i
+include atcoder/extra/header/chaemon_header
+A:=Seq[64:nextInt().uint]
+a:=0.uint
+for i,Ai in A: a+=Ai*2.uint^i
 echo a
