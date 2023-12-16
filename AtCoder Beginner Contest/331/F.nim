@@ -1,2 +1,1 @@
 include atcoder/extra/header/chaemon_header
-var a=[0]&[1,2]
