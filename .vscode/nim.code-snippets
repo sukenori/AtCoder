@@ -422,10 +422,10 @@
 		"prefix":"end",
 		"body":["*${1:val}.end()"]
 	},
-	"newTable":{
+	"Table":{
 		"scope":"nim",
-		"prefix":"newTable",
-		"body":["newTable[${1:T},${2:T}]()"]
+		"prefix":"Table",
+		"body":["Table[${1:T},${2:T}]"]
 	},
 	"keys/values/pairs":{
 		"scope":"nim",

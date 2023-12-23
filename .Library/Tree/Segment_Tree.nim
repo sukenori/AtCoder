@@ -1,7 +1,7 @@
 import atcoder/segtree
 s:=initSegTree[int](N,(a,b:int)=>min(a,b),()=>int.inf)
 for i,di in d:
-  if di<s.get(i): s.set(i,di)
+  if di<s.get(i): s[i]=di
 s.prod(a..<b)
 
 n:=1; while n<N: n*=2
