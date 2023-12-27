@@ -1,4 +1,2 @@
 include atcoder/extra/header/chaemon_header
-l:=[1,3].toDeque
-echo l.popLast
-echo l
+echo floorDiv(-4,2)

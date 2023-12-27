@@ -465,7 +465,7 @@
   "floor/ceilDev":{
     "scope":"nim",
     "prefix":"floor/ceilDev",
-    "body":["${1|floor,ceil|}Div"]
+    "body":["${1|floor,ceil|}Div(${2:x},${3:y})"]
   },
   "sin/cos/tan":{
     "scope":"nim",
