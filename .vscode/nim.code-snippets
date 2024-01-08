@@ -570,10 +570,10 @@
 		"scope":"nim",
 		"prefix":"case",
 		"body":[
-      "case ${1:var}",
-			"of ${2:value}:"
-			"of ${3:value}:"
-			"else:"
+      "case ${1:var}:",
+			"/tof ${2:value}:"
+			"/tof ${3:value}:"
+			"/telse:"
     ]
 	},
 	"block":{
