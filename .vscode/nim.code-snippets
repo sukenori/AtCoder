@@ -442,6 +442,11 @@
 		"prefix":"hasKeyOrPut",
 		"body":["hasKeyOrPut(${1:key},${2:val})"]
 	},
+	"toInt/Float":{
+		"scope":"nim",
+		"prefix":"toInt/Float",
+		"body":["to${1|Int,Float|}"]
+	},
 	"^":{
 		"scope":"nim",
 		"prefix":"^",
@@ -487,11 +492,6 @@
 		"prefix":"abs",
 		"body":["abs($0)"]
 	},
-	"toInt/Float":{
-		"scope":"nim",
-		"prefix":"toInt/Float",
-		"body":["to${1|Int,Float|}"]
-	},
 	"max/min=":{
 		"scope":"nim",
 		"prefix":"max/min=",
@@ -515,7 +515,7 @@
 	"fromBin":{
 		"scope":"nim",
 		"prefix":"fromBin",
-		"body":["fromBin[int](${1:n})"]
+		"body":["fromBin[int]("0b"&${1:str})"]
 	},	
 	"N-adic number":{
 		"scope":"nim",
@@ -525,6 +525,11 @@
 			"while n>0: a.insert(n%b,0); n//=b"
     ]
 	},
+	"swap":{
+		"scope":"nim",
+		"prefix":"swap",
+		"body":["swap(${1:a},${2:b})"]
+	},	
 	"for":{
 		"scope":"nim",
 		"prefix":"for",
