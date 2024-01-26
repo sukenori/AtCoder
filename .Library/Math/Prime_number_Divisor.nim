@@ -1,12 +1,16 @@
 import atcoder/extra/math/eratosthenes
-var e=initEratosthenes(n)
+e:=initEratosthenes(n)
+
+e.prime
 
 e.factor(N)
 #Factor
-f:=[(N,1)].toTable; n:=N
+var f:Table[int,int]
 for i in 2..N.float.sqrt.int:
-  while n%i==0:
-    if f.hasKeyOrPut(i,1): f[i]+=1; n//=i
+  while N%i==0:
+    if f.hasKeyOrPut(i,1): f[i]+=1
+    N//=i
+if N>1: f[N]=1
 
 e.divisor(N)
 #Divisor

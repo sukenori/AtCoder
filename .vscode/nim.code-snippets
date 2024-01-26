@@ -139,7 +139,10 @@
 	"pattern match":{
 		"scope":"nim",
 		"prefix":"pattern match",
-		"body":["match(re\"${1:pattern}\")"]
+		"body":[
+			"import re",
+			"match(re\"${1:pattern}\")"
+		]
 	},
 	"sorted":{
 		"scope":"nim",
@@ -507,6 +510,14 @@
 		"prefix":"gcd/lcm",
 		"body":["${1|gcd,lcm|}(${2:a},${3:b})"]
 	},
+	"bit index":{
+		"scope":"nim",
+		"prefix":"fromBin",
+		"body":[
+			"import atcoder/extra/other/bitutils",
+			"${1:int}[${2:i}]"
+		]
+	},
 	"toBin":{
 		"scope":"nim",
 		"prefix":"toBin",
@@ -516,7 +527,7 @@
 		"scope":"nim",
 		"prefix":"fromBin",
 		"body":["fromBin[int]("0b"&${1:str})"]
-	},	
+	},
 	"N-adic number":{
 		"scope":"nim",
 		"prefix":"N-adic number",
@@ -576,9 +587,9 @@
 		"prefix":"case",
 		"body":[
       "case ${1:var}:",
-			"/tof ${2:value}:"
-			"/tof ${3:value}:"
-			"/telse:"
+			"\tof ${2:value}:"
+			"\tof ${3:value}:"
+			"\telse:"
     ]
 	},
 	"block":{
