@@ -445,6 +445,11 @@
 		"prefix":"hasKeyOrPut",
 		"body":["hasKeyOrPut(${1:key},${2:val})"]
 	},
+	"toCountTable":{
+		"scope":"nim",
+		"prefix":"toCountTable",
+		"body":["toCountTable"]
+	},
 	"toInt/Float":{
 		"scope":"nim",
 		"prefix":"toInt/Float",
