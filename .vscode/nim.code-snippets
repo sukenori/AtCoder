@@ -254,6 +254,11 @@
 		"prefix":"sum 2D",
 		"body":["${1:seq}.mapIt(sum(it)).sum"]
 	},
+	"cumsummed":{
+		"scope":"nim",
+		"prefix":"cumsummed",
+		"body":["cumsummed"]
+	},
 	"lower/upperBound":{
 		"scope":"nim",
 		"prefix":"lower/upperBound",

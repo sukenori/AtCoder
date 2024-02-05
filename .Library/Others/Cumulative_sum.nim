@@ -1,3 +1,5 @@
+cumsummed
+
 for i in 1..<N: A[i]+=A[i-1]
 
 #2D
