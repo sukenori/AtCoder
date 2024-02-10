@@ -7,10 +7,10 @@ proc e():S= #全てのaに対してop(a,e)=op(e,a)=aを満たすもの
 proc mapping(f:F,x:S):S=x,f #各dataのxにlazyのfをどう反映させるか
 proc composition(f,g:F):F=f,g #lazyのgに対して次のfをどう反映させるか
 proc id():F=0 #全てのaに対してmapping(id,a)=aとなるもの
-n:= 
-s:=LazySegTree.getType(S,F,op,e,mapping,composition,id).init(n)
+let n= 
+var s=LazySegTree.getType(S,F,op,e,mapping,composition,id).init(n)
 
-n:=1; while n<N: n*=2
+var n=1; while n<N: n*=2
 var st,lz=Seq[2*n-1:0]
 for i in 0..<N: st[n-1+i]=d[i]
 for i in 0..n-2<<1: st[i]=max(st[2*i+1],st[2*i+2])

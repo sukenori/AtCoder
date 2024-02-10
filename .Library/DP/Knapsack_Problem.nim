@@ -1,5 +1,5 @@
 for i in 0..<N:
-  for j in w[i]..W<<1:
+  for j in countdown(W,W[i]):
     dp[j].max=dp[j-w[i]]+v[i]
 echo dp[W]
 

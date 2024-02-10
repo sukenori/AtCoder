@@ -1,13 +1,13 @@
 import atcoder/segtree
-s:=initSegTree[int](N,(a,b:int)=>min(a,b),()=>int.inf)
+var s=initSegTree[int](N,(a,b:int)=>min(a,b),()=>int.inf)
 for i,di in d:
   if di<s.get(i): s[i]=di
 s.prod(a..<b)
 
-n:=1; while n<N: n*=2
-st:=Seq[2*n-1:int.inf]
+var n=1; while n<N: n*=2
+var st=newSeqWith(2*n-1,int.inf)
 proc u(i,v:int)=
-  j:=n-1+v; st[j]=v
+  var j=n-1+v; st[j]=v
   while j>0:
     j=(j-1)//2
     st[j]=min(st[2*j+1],st[2*j+2])

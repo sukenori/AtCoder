@@ -1,5 +1,5 @@
 import atcoder/dsu
-d:=initDSU(N)
+var d=initDSU(N)
 for _ in 1..M:
   let u,v=nextInt()-1
   d.merge(u,v)
@@ -12,13 +12,15 @@ d.size(i)
 
 d.groups
 
-p:=(0..<N).toSeq
-r:=Seq[N:0]
+var p=(0..<N).toSeq
+var r=newSeqWith(N,0)
 proc root(i:int):int=
   if p[i]==i: return i
   else: p[i]=root(p[i]); return p[i]
 proc union(u,v:int)=
-  ru:=root(u); rv:=root(v)
+  let
+    ru=root(u)
+    rv=root(v)
   if ru==rv: return
   else:
     if r[ru]<r[rv]: p[ru]=rv
@@ -30,7 +32,7 @@ for _ in 1..M:
   union(u,v)
 
 include atcoder/extra/structure/weighted_union_find
-s:=initWeightedUnionFind[int](N)
+var s=initWeightedUnionFind[int](N)
 
 s.root(u)
 

@@ -1,8 +1,8 @@
 import atcoder/extra/other/compress
-c:=a.initCompress
+let c=a.initCompress
 c.id(a[i])
 
-c:=a.toHashSet.toSeq.sorted
+let c=a.toHashSet.toSeq.sorted
 c.lowerBound(a[i])
 
-o:=(0..<N).toSeq.sortedByIt(a[it])
+let o=(0..<N).toSeq.sortedByIt(a[it])

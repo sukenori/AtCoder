@@ -11,7 +11,7 @@
 	"header":{
 		"scope":"nim",
 		"prefix":"header",
-		"body":["include atcoder/${1|extra/header/chaemon_header,header|}"]
+		"body":["include atcoder/${1|header,extra/header/chaemon_header|}"]
 	},
 	"inf":{
 		"scope":"nim",
@@ -51,15 +51,21 @@
     "prefix":"modint inv",
     "body":["${1:x}.inv()"]
   },
-	"nextInt/String/Float":{
+	"input Int/String/Float":{
 		"scope":"nim",
-		"prefix":"nextInt/String/Float",
+		"prefix":"input Int/String/Float",
 		"body":["next${1|Int,String,Float|}()"]
 	},
-	"multiple nextInt/String/Float":{
+	"input SeqWith Int/String/Float":{
 		"scope":"nim",
-		"prefix":"multiple nextInt/String/Float",
-		"body":["Seq[${1:N}:next${2|Int,String,Float|}()]"]
+		"prefix":"input SeqWith Int/String/Float",
+		"body":["newSeqWith(${1:N},next${2|Int,String,Float|}())"]
+		//"body":["Seq[${1:N}:next${2|Int,String,Float|}()]"]
+	},
+	"input 2DSeqWith Int/String/Float":{
+		"scope":"nim",
+		"prefix":"input 2DSeqWith Int/String/Float",
+		"body":["newSeqWith(${1:H},newSeqWith(${2:W},next${3|Int,String,Float|}()))"]
 	},
 	"readLine":{
 		"scope":"nim",
@@ -259,6 +265,11 @@
 		"prefix":"cumsummed",
 		"body":["cumsummed"]
 	},
+	"cumsummed":{
+		"scope":"nim",
+		"prefix":"cumsummed",
+		"body":["cumsummed"]
+	},
 	"lower/upperBound":{
 		"scope":"nim",
 		"prefix":"lower/upperBound",
@@ -302,7 +313,10 @@
 	"collect":{
 		"scope":"nim",
 		"prefix":"collect",
-		"body": ["(block: collect(newSeq):(for i in 0..<N: $0))"]
+		"body": [
+			"import sugar",
+			"(block: collect(newSeq):(for i in 0..<N: $0))"
+		]
 	},
 	"Deque":{
 		"scope":"nim",
@@ -435,6 +449,11 @@
 		"prefix":"Table",
 		"body":["Table[${1:T},${2:T}]"]
 	},
+	"toTable":{
+		"scope":"nim",
+		"prefix":"toTable",
+		"body":["[(${1:key},${2:val})].toTable"]
+	},
 	"keys/values/pairs":{
 		"scope":"nim",
 		"prefix":"keys/values/pairs",
@@ -522,12 +541,17 @@
 	},
 	"bit index":{
 		"scope":"nim",
-		"prefix":"fromBin",
+		"prefix":"bit index",
 		"body":[
 			"import atcoder/extra/other/bitutils",
 			"${1:int}[${2:i}]"
 		]
 	},
+	"countSetBits":{
+		"scope":"nim",
+		"prefix":"countSetBits",
+		"body":["countSetBits"]
+	},	
 	"toBin":{
 		"scope":"nim",
 		"prefix":"toBin",
@@ -562,7 +586,7 @@
 	"countup/down":{
 		"scope":"nim",
 		"prefix":"countup/down",
-		"body":["count${1|up,down|}(${2:start},${3:end},${4:step})"]
+		"body":["count${1|up,down|}(${2:start},${3:end}${4:,step})"]
 	},
 	"succ/pred":{
 		"scope":"nim",
