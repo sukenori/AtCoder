@@ -6,4 +6,4 @@ while q.len>0:
   for j in g[i.i]:
     let nw=i.d+j.w
     if nw<d[j.t]: d[j.t]=nw; q.push((nw,j.t))
-#echo d
+#echo d[^1]

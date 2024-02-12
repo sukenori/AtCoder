@@ -321,7 +321,10 @@
 	"Deque":{
 		"scope":"nim",
 		"prefix":"Deque",
-		"body":["Deque[${1:type}]"]
+		"body":[
+			"import deques",
+			"Deque[${1:type}]"
+		]
 	},
 	"toDeque":{
 		"scope":"nim",

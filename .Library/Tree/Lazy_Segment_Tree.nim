@@ -1,14 +1,20 @@
 import atcoder/lazysegtree
 type
-  S=int
-  F=int
-proc op(a,b:S):S=a,b
-proc e():S= #全てのaに対してop(a,e)=op(e,a)=aを満たすもの
+  S=int #dataの型
+  F=int #lazyの型
+proc op(a,b:S):S=a,b #dataの区間取得方法
+proc e():S= #どんなaに対してもop(e,a)=aとなるもの（定数）
 proc mapping(f:F,x:S):S=x,f #各dataのxにlazyのfをどう反映させるか
-proc composition(f,g:F):F=f,g #lazyのgに対して次のfをどう反映させるか
-proc id():F=0 #全てのaに対してmapping(id,a)=aとなるもの
-let n= 
+proc composition(f,g:F):F=f,g #lazyの元のgに対して次のfをどう反映させるか
+proc id():F= #どんなfに対してもmapping(id,f)=fとなるもの（定数）
+let n= #もしくはv=seq
 var s=LazySegTree.getType(S,F,op,e,mapping,composition,id).init(n)
+
+s[i]=x
+
+s[l..<r]
+
+s.apply(l..<r,f)
 
 var n=1; while n<N: n*=2
 var st,lz=Seq[2*n-1:0]
