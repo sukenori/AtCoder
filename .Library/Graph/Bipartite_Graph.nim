@@ -3,7 +3,7 @@ var f=true
 for i in 0..<N:
   proc dfs(i:int)=
     for j in g[i]:
-      if d[j]== -1: d[j]=1-d[i]; dfs(j)
+      if d[j] == -1: d[j]=1-d[i]; dfs(j)
       elif d[i]+d[j]!=1: f=false
   if d[i]== -1: d[i]=0; dfs(i)
 

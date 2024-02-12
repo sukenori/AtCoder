@@ -87,6 +87,16 @@
 		"prefix":"parseInt/Float",
 		"body":["parse${1|Int,Float|}"]
 	},
+	"char":{
+		"scope":"nim",
+		"prefix":"char",
+		"body":["char"]
+	},
+	"ord":{
+		"scope":"nim",
+		"prefix":"ord",
+		"body":["ord"]
+	},
 	"char to int":{
 		"scope":"nim",
 		"prefix":"char to int",
