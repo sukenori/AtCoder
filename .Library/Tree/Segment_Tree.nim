@@ -12,7 +12,7 @@ type S=int
 proc op(a,b:S):S=min(a,b)
 proc e():S=int.inf
 var s=initSegTree[S](v,op,e)
-s.[a..<b]
+s[a..<b]
 
 var n=1; while n<N: n*=2
 var st=newSeqWith(2*n-1,int.inf)

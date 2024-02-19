@@ -38,6 +38,27 @@
 		"prefix":"countSetBits",
 		"body": ["countSetBits"]
 	},
+	"bitslice":{
+		"scope":"nim",
+		"prefix":"bitslice",
+		"body": [
+			"import bitops",
+			"bitslice(${1:l}..${2:r})"
+		]
+	},
+	"flipMask":{
+		"scope":"nim",
+		"prefix":"flipMask",
+		"body": [
+			"import bitops",
+			"flipMask(${1:l}..${2:r})"
+		]
+	},
+	"parseBinInt":{
+		"scope":"nim",
+		"prefix":"parseBinInt",
+		"body":["${1:0b.}parseBinInt"]
+	},
 	"modint":{
 		"scope":"nim",
 		"prefix":"modint",
