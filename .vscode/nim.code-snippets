@@ -67,6 +67,11 @@
 			"type mint=modint${1|998244353,1000000007|}"
 		]
 	},
+  "modint pow":{
+    "scope":"nim",
+    "prefix":"modint pow",
+    "body":["${1:x}.pow(${2:n})"]
+  },	
   "modint inv":{
     "scope":"nim",
     "prefix":"modint inv",
@@ -108,15 +113,10 @@
 		"prefix":"parseInt/Float",
 		"body":["parse${1|Int,Float|}"]
 	},
-	"char":{
+	"chr/ord":{
 		"scope":"nim",
-		"prefix":"char",
-		"body":["char"]
-	},
-	"ord":{
-		"scope":"nim",
-		"prefix":"ord",
-		"body":["ord"]
+		"prefix":"chr/ord",
+		"body":["${1|chr,ord|}"]
 	},
 	"char to int":{
 		"scope":"nim",
@@ -196,10 +196,10 @@
 		"prefix":"rotatedLeft",
 		"body":["rotatedLeft(${1:n})"]
 	},
-	"find":{
+	"find/rfind":{
 		"scope":"nim",
-		"prefix":"find",
-		"body":["find(${1:val})"]
+		"prefix":"find/rfind",
+		"body":["${1|find,rfind|}(${2:val}${3:,val})"]
 	},
 	"count":{
 		"scope":"nim",
