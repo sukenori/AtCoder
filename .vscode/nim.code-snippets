@@ -360,7 +360,10 @@
 	"toDeque":{
 		"scope":"nim",
 		"prefix":"toDeque",
-		"body":["toDeque"]
+		"body":[
+			"import deques",
+			"toDeque"
+		]
 	},
 	"peekFirst/Last":{
 		"scope":"nim",
