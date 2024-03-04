@@ -491,6 +491,7 @@
 		"prefix":"toTable",
 		"body":["[(${1:key},${2:val})].toTable"]
 	},
+
 	"keys/values/pairs":{
 		"scope":"nim",
 		"prefix":"keys/values/pairs",
@@ -516,10 +517,10 @@
 		"prefix":"toInt/Float",
 		"body":["to${1|Int,Float|}"]
 	},
-	"^":{
+	"del":{
 		"scope":"nim",
-		"prefix":"^",
-		"body":["^"]
+		"prefix":"del",
+		"body":["del(${1:key})"]
 	},
 	"sqrt":{
 		"scope":"nim",
