@@ -5,14 +5,16 @@ proc e():S=int.inf
 var s=initSegTree[S](N,op,e)
 for i,di in d:
   if di<s.get(i): s[i]=di
-s[a..<b]
 
 import atcoder/segtree
 type S=int
 proc op(a,b:S):S=min(a,b)
 proc e():S=int.inf
 var s=initSegTree[S](v,op,e)
-s[a..<b]
+
+s[i]=x
+
+s[l..<r]
 
 var n=1; while n<N: n*=2
 var st=newSeqWith(2*n-1,int.inf)
