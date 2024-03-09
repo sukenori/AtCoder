@@ -4,3 +4,4 @@ proc dfs(i:int)=
   for j in g[i]:
     if not d[j.t]:
       dfs(j.t)
+  #d[i]=false
