@@ -1,3 +1,4 @@
+impory deques
 var q=[0].toDeque
 var d=newSeqWith(N,false)
 while q.len>0:
