@@ -46,18 +46,18 @@
 			"bitslice(${1:l}..${2:r})"
 		]
 	},
-	"flipMask":{
+	"flipMasked":{
 		"scope":"nim",
-		"prefix":"flipMask",
+		"prefix":"flipMasked",
 		"body": [
 			"import bitops",
-			"flipMask(${1:l}..${2:r})"
+			"flipMasked(${1:l}..${2:r})"
 		]
 	},
 	"parseBinInt":{
 		"scope":"nim",
 		"prefix":"parseBinInt",
-		"body":["${1:0b.}parseBinInt"]
+		"body":["parseBinInt"]
 	},
 	"modint":{
 		"scope":"nim",
@@ -236,10 +236,20 @@
 		"prefix":"newSeq",
 		"body":["newSeq[${1:T}](${2:len})"]
 	},
+	"2D newSeq":{
+		"scope":"nim",
+		"prefix":"2D newSeq",
+		"body":["newSeqWith(${1:H},newSeq[${2:T}](${3:W}))"]
+	},
 	"newSeqWith":{
 		"scope":"nim",
 		"prefix":"newSeqWith",
 		"body":["newSeqWith(${1:n},${2:val})"]
+	},
+	"2D newSeqWith":{
+		"scope":"nim",
+		"prefix":"2D newSeqWith",
+		"body":["newSeqWith(${1:H},newSeqWith(${2:W},${3:val}))"]
 	},
 	"toSeq":{
 		"scope":"nim",
@@ -289,12 +299,7 @@
 	"sum 2D":{
 		"scope":"nim",
 		"prefix":"sum 2D",
-		"body":["${1:seq}.mapIt(sum(it)).sum"]
-	},
-	"cumsummed":{
-		"scope":"nim",
-		"prefix":"cumsummed",
-		"body":["cumsummed"]
+		"body":["${1:seq}.mapIt(it.sum).sum"]
 	},
 	"cumsummed":{
 		"scope":"nim",
@@ -309,7 +314,7 @@
 	"deduplicate":{
 		"scope":"nim",
 		"prefix":"deduplicate",
-		"body":["deduplicate"]
+		"body":["deduplicate${1:(true)}"]
 	},
 	"map/apply":{
 		"scope":"nim",
@@ -491,7 +496,11 @@
 		"prefix":"toTable",
 		"body":["[(${1:key},${2:val})].toTable"]
 	},
-
+	"inc":{
+		"scope":"nim",
+		"prefix":"inc",
+		"body":["inc(${1:key})"]
+	},
 	"keys/values/pairs":{
 		"scope":"nim",
 		"prefix":"keys/values/pairs",
@@ -522,10 +531,20 @@
 		"prefix":"del",
 		"body":["del(${1:key})"]
 	},
-	"sqrt":{
+	"exp":{
 		"scope":"nim",
 		"prefix":"^",
 		"body":["^"]
+	},
+	"sqrt":{
+		"scope":"nim",
+		"prefix":"sqrt",
+		"body":["sqrt"]
+	},
+	"cbrt":{
+		"scope":"nim",
+		"prefix":"cbrt",
+		"body":["cbrt"]
 	},
 	"fac":{
 		"scope":"nim",
@@ -598,7 +617,7 @@
 	"fromBin":{
 		"scope":"nim",
 		"prefix":"fromBin",
-		"body":["fromBin[int]("0b"&${1:str})"]
+		"body":["fromBin[int](\"0b\"&${1:str})"]
 	},
 	"N-adic number":{
 		"scope":"nim",
@@ -659,8 +678,8 @@
 		"prefix":"case",
 		"body":[
       "case ${1:var}:",
-			"\tof ${2:value}:"
-			"\tof ${3:value}:"
+			"\tof ${2:value}:",
+			"\tof ${3:value}:",
 			"\telse:"
     ]
 	},
