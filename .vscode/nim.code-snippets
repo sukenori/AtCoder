@@ -36,7 +36,10 @@
 	"countSetBits":{
 		"scope":"nim",
 		"prefix":"countSetBits",
-		"body": ["countSetBits"]
+		"body": [
+			"import bitops",			
+			"countSetBits"
+		]
 	},
 	"bitslice":{
 		"scope":"nim",
