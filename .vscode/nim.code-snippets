@@ -116,6 +116,11 @@
 		"prefix":"parseInt/Float",
 		"body":["parse${1|Int,Float|}"]
 	},
+	"reset":{
+		"scope":"nim",
+		"prefix":"reset",
+		"body":["reset"]
+	},
 	"chr/ord":{
 		"scope":"nim",
 		"prefix":"chr/ord",
@@ -259,11 +264,6 @@
 		"prefix":"toSeq",
 		"body":["toSeq"]
 	},
-	"reset":{
-		"scope":"nim",
-		"prefix":"reset",
-		"body":["reset"]
-	},	
 	"setLen":{
 		"scope":"nim",
 		"prefix":"setLen",
@@ -719,6 +719,9 @@
 	"dump":{
 		"scope":"nim",
 		"prefix":"dump",
-		"body":["dump($0)"]
+		"body":[
+			"import sugar",
+			"dump"
+		]
 	},
 }
