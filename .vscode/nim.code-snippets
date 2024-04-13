@@ -519,6 +519,11 @@
 		"prefix":"hasKeyOrPut",
 		"body":["hasKeyOrPut(${1:key},${2:val})"]
 	},
+	"getOrDefault":{
+		"scope":"nim",
+		"prefix":"getOrDefault",
+		"body":["getOrDefault(${1:key}${2:,val})"]
+	},
 	"toCountTable":{
 		"scope":"nim",
 		"prefix":"toCountTable",
