@@ -544,6 +544,11 @@
 		"prefix":"^",
 		"body":["^"]
 	},
+  "next/isPowerOfTwo":{
+    "scope":"nim",
+    "prefix":"next/isPowerOfTwo",
+    "body":["${1|next,is|}PowerOfTwo"]
+  },
 	"sqrt":{
 		"scope":"nim",
 		"prefix":"sqrt",
