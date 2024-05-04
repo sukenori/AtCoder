@@ -8,6 +8,7 @@ f[l..<r]
 
 var f=newSeqWith(N+1,0)
 
+var i,x=nextInt()
 while i<=N: f[i]+=x; i+=i and -i
 
 var s=0
