@@ -1,8 +1,8 @@
 import atcoder/extra/structure/set_map
 var s=initSortedSet[T](seq)
-*s.begin()
-*s.end().pred
- .succ
+(*s.begin())
+(*s.end().pred)
+
 s.incl(x)
 s.excl(x)
 s.find(x)-s.begin()
