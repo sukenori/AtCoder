@@ -7,7 +7,7 @@ for i in 0..<N:
 var a=0
 for i in 0..1:
   for j in 0..1:
-    let pj=p[j].filterIt(it mod 2==i).sorted
+    let pj=p[j].filterIt(it.abs mod 2==i).sorted
     let n=pj.len
-    for k in 0..<n: a+=(2*k+1-n)*pj[k] div 2
-echo a
+    for k in 0..<n: a+=(2*k+1-n)*pj[k]
+echo a div 2
