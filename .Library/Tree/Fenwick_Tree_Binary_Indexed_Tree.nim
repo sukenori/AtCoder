@@ -1,5 +1,5 @@
 import atcoder/fenwicktree
-var f=FenwickTreeType(int).init(N)
+var f=initFenwickTree[int](N)
 
 f.add(i,x)
 
