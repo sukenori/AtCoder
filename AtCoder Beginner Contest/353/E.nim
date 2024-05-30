@@ -1,12 +1,14 @@
 include atcoder/header
 let N=nextInt()
-var t:Table[(int,char),seq[(int,char)]]
+import deques
+var t:Table[Deque[char],int]
 for _ in 1..N:
-  let S=nextString()
-  for i in 0..<S.len:
-    if not t.hasKey((i,S[i])): t[(i,S[i])]=newSeq[(int,char)](0)
-    if i>0: t[(i-1,S[i-1])].add((i,S[i]))
-for k,v in t: echo (k,v)
+  var d:Deque[char]
+  let S=nextString()&" "
+  for i,Si in S:
+    if i>0: t[d]+=1
+    d.addLast(Si)
+    if not t.hasKey(d): t[d]=0
 var a=0
-for k,v in t: a+=v.len*(v.len) div 2
+for v in t.values: a+=v*(v-1) div 2
 echo a
