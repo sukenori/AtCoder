@@ -8,4 +8,4 @@ for (k,v) in m:
   if k-lk==1: si+=(k mod M)*v
   else: s.max=si; si=(k mod M)*v
   lk=k
-echo A.sum-s
+echo max(0,A.sum-max(s,si))
