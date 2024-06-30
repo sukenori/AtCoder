@@ -1,5 +1,3 @@
-include atcoder/header
-let N=nextInt()
 type trie=ref object
   t:Table[char,trie]
   c:int

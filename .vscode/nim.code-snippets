@@ -499,9 +499,9 @@
 		"prefix":"Table",
 		"body":["Table[${1:T},${2:T}]"]
 	},
-	"newTable":{
+	"initTable":{
 		"scope":"nim",
-		"prefix":"newTable",
+		"prefix":"initTable",
 		"body":["initTable[${1:T},${2:T}]()"]
 	},
 	"toTable":{
