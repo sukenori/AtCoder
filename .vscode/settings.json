@@ -12,6 +12,9 @@
   "[python]": {
     "editor.tabSize": 4
   },
-  "nim.enableNimsuggest": false,
-  "nim.lintOnSave": false
+  //"nim.enableNimsuggest": false,
+  //"nim.lintOnSave": false
+  "terminal.integrated.env.linux": {
+    "PATH": "/home/sukenori/.nimble/bin:${env:PATH}"
+  },
 }

@@ -16,6 +16,20 @@ s[l..<r]
 
 s.apply(l..<r,f)
 
+import atcoder/lazysegtree
+type
+  S=object #dataの型
+    value:int
+    size:int
+  F=int #lazyの型
+proc op(a,b:S):S=S(value:a.value+b.value,size:a.size+b.size) #dataの区間取得方法
+proc e():S=S(value:0,size:0) #どんなaに対してもop(e,a)=aとなるもの（定数）
+proc mapping(f:F,x:S):S=S(value:f*x.size+x.value,size:x.size) #各dataのxにlazyのfをどう反映させるか
+proc composition(f,g:F):F=f+g #lazyの元のgに対して次のfをどう反映させるか
+proc id():F=0 #どんなfに対してもmapping(id,f)=fとなるもの（定数）
+let n= #もしくはv=seq
+var s=LazySegTree.getType(S,F,op,e,mapping,composition,id).init(v.mapIt(S(value:it,size:1)))
+
 var n=1; while n<N: n*=2
 var st,lz=Seq[2*n-1:0]
 for i in 0..<N: st[n-1+i]=d[i]

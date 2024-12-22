@@ -28,10 +28,13 @@
 		"prefix":"shl/shr",
 		"body": ["${1|shl,shr|}"]
 	},
-	"testBit":{
+	"testBit":{//右からn番目のビットをboolで返す
 		"scope":"nim",
 		"prefix":"testBit",
-		"body": ["testBit(${1:n})"]
+		"body": [
+			"import bitops",	
+			"testBit(${1:n})"
+		]
 	},
 	"countSetBits":{
 		"scope":"nim",
@@ -96,6 +99,16 @@
 		"prefix":"input 2DSeqWith Int/String/Float",
 		"body":["newSeqWith(${1:H},newSeqWith(${2:W},next${3|Int,String,Float|}()))"]
 	},
+	"input 2-SeqWith Int/String/Float":{
+		"scope":"nim",
+		"prefix":"input 2-SeqWith Int/String/Float",
+		"body":[
+			"var A,B==newSeq[int](N)",
+			"for i in 0..<N:",
+  		"\tlet Ai,Bi=nextInt()",
+			"\tA[i]=Ai; B[i]=Bi"
+		]
+	},
 	"readLine":{
 		"scope":"nim",
 		"prefix":"readLine",
@@ -104,12 +117,17 @@
 	"multiple readLine":{
 		"scope":"nim",
 		"prefix":"multiple readLine",
-		"body":["newSeqWith(${2:N},stdin.readLine)"]
+		"body":["newSeqWith(${1:N},stdin.readLine)"]
+	},
+	"fmt":{
+		"scope":"nim",
+		"prefix":"fmt",
+		"body":["fmt\"{${1:v}:.${2:n}f}\""]
 	},
 	"split":{
 		"scope":"nim",
 		"prefix":"split",
-		"body":["split"]
+		"body":["split(\" \")"]
 	},
 	"parseInt/Float":{
 		"scope":"nim",
@@ -642,15 +660,7 @@
 		"prefix":"fromBin",
 		"body":["fromBin[int](\"0b\"&${1:str})"]
 	},
-	"N-adic number":{
-		"scope":"nim",
-		"prefix":"N-adic number",
-		"body":[
-      "var a:seq[int]",
-			"while n>0: a.insert(n%b,0); n//=b"
-    ]
-	},
-	"swap":{
+		"swap":{
 		"scope":"nim",
 		"prefix":"swap",
 		"body":["swap(${1:a},${2:b})"]
@@ -721,7 +731,7 @@
 		"prefix":"echo",
 		"body":["echo"]
 	},
-	"stdout.write":{
+	"stdout.write":{//改行しない出力
 		"scope":"nim",
 		"prefix":"stdout.write",
 		"body":["stdout.write"]

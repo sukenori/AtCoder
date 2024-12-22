@@ -1,5 +1,5 @@
-var g=newSeqWith(N,newSeq[int](0))
-var ind=newSeqWith(N,0)
+var g=newSeqWith(N,newSeq[int]())
+var ind=newSeq[int](N)
 for _ in 1..M:
   let u,v=nextInt()-1
   g[u].add(v); ind[v]+=1

@@ -6,6 +6,7 @@ for i in 1..<N: A[i]+=A[i-1]
 import atcoder/extra/dp/cumulative_sum_2d
 let s=A.initCumulativeSum2D
 s[si..ei,sj..ej]
+#s[si..si,sj..sj]=A[si][sj] 
 
 for i in 0..<H:
   for j in 0..<W:

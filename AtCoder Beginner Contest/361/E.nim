@@ -7,13 +7,15 @@ for _ in 1..N-1:
     C=nextInt()
   g[A].add((B,C)); g[B].add((A,C))
 var
-  l=newSeq[int](N)
-  p=newSeq[int]()
+  d=newSeqWith(N,-1)
+  a=0
 proc dfs(i:int)=
   for j in g[i]:
-    if l[j.t]==0:
-      l[j.t]=l[i]+j.l
+    if d[j.t] == -1:
+      d[j.t]=d[i]+j.l
+      a+=j.l
       dfs(j.t)
-  p.add(i+1)
-dfs(0)
-echo p
+d[0]=0; dfs(0)
+let s=d.maxIndex
+d.fill(-1); d[s]=0; dfs(s)
+echo a-d.max
